@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './page.module.css'
-import pricechart from '@/assets/image/pricechart.png'
+// import pricechart from '@/assets/image/pricechart.png'
 
 
 const HeroSection = () => {

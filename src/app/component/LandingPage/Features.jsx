@@ -31,7 +31,7 @@ export default function Features() {
             horizons, and the trader craving advanced tools.
           </p>
         </div>
-        <div className="flex">
+        <div className="container">
           <div className="flex mb-16 ml-auto mr-auto flex-col">
             <div className="border border-white/10 rounded-xl justify-center items-center mb-12 ml-auto mr-auto p-1 inline-flex">
               <a className={`hover:bg-gradient-to-r hover:from-[#ffffff0d] hover:to-[#a8abd308] bg-[#ddd0] rounded-lg p-[0.9rem] font-medium transition-all duration-300 cursor-pointer ${activeSection === 'FundBuilder' ? styles.activeTab : null}`} onClick={(e) => handleSectionClick(e,'FundBuilder')}>
@@ -123,7 +123,7 @@ export default function Features() {
                   </div>
                 </div>
                 <div className="w-full h-full">
-                <Image src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66e83e2c2e58e2df3640ecc7_Price%20chart.svg" width={500} height={200}/>
+                <Image src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66e83e2c2e58e2df3640ecc7_Price%20chart.svg" alt=""/>
                 </div>
               </div> : null}
               {activeSection === 'FundMarketPlace' ? <div className="grid gap-[6.5rem] grid-cols-[383px_1fr] auto-cols-fr xl:gap-[9rem] xl:grid-cols-[500px_1fr]">

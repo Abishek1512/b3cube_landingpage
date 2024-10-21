@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import InvestorPlayground from '../../../public/svg/LandingPage/InvestorPlayground.svg'
 
