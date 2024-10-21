@@ -48,7 +48,7 @@ export default function Features() {
               </a>
             </div>
             <div className={`flex ${styles.sectionContent} ${fade ? styles.active : ''}`}>
-              {activeSection === 'FundBuilder' ? <div className="grid gap-[6.5rem] grid-cols-[383px_1fr] auto-cols-fr xl:gap-[9rem] xl:grid-cols-[500px_1fr]">
+              {activeSection === 'FundBuilder' ? <div className="grid gap-[6.5rem] grid-cols-[383px_1fr] auto-cols-fr xl:gap-[5rem] xl:grid-cols-[38%_1fr]">
                 <div className="flex flex-col items-start justify-center">
                   <div className="text-white/60 text-lg tracking-tight mb-8 leading-relaxed">
                     <div className="text-white">
@@ -123,10 +123,10 @@ export default function Features() {
                   </div>
                 </div>
                 <div className="w-full h-full">
-                <Image src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66e83e2c2e58e2df3640ecc7_Price%20chart.svg" alt=""/>
+                <Image src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66e83e27f1bec74496ef4ba3_Fund%20Builder.PNG" width={700} height={200} alt=""/>
                 </div>
               </div> : null}
-              {activeSection === 'FundMarketPlace' ? <div className="grid gap-[6.5rem] grid-cols-[383px_1fr] auto-cols-fr xl:gap-[9rem] xl:grid-cols-[500px_1fr]">
+              {activeSection === 'FundMarketPlace' ? <div className="grid gap-[6.5rem] grid-cols-[383px_1fr] auto-cols-fr xl:gap-[5rem] xl:grid-cols-[38%_1fr]">
                 <div className="flex flex-col items-start justify-center">
                   <div className="text-white/60 text-lg tracking-tight mb-8 leading-relaxed">
                     <div className="text-white">
@@ -199,10 +199,10 @@ export default function Features() {
                   </div>
                 </div>
                 <div className="w-full h-full">
-                <Image src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66e83e28a079bb7c5b4e4c12_Fund%20Landing%20page%202.PNG" width={500} height={200}/>
+                <Image src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66e83e28a079bb7c5b4e4c12_Fund%20Landing%20page%202.PNG" width={700} height={200}/>
                 </div>
               </div> : null}
-              {activeSection === 'FundOracle' ? <div className="grid gap-[6.5rem] grid-cols-[383px_1fr] auto-cols-fr xl:gap-[9rem] xl:grid-cols-[500px_1fr]">
+              {activeSection === 'FundOracle' ? <div className="grid gap-[6.5rem] grid-cols-[383px_1fr] auto-cols-fr xl:5rem] xl:grid-cols-[38%_1fr]">
                 <div className="flex flex-col items-start justify-center">
                   <div className="text-white/60 text-lg tracking-tight mb-8 leading-relaxed">
                     <div className="text-white">
@@ -275,10 +275,10 @@ export default function Features() {
                   </div>
                 </div>
                 <div className="w-full h-full">
-                <Image src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66e83e273adb0752a05d8c4d_Fund%20Oracle.PNG" width={500} height={200}/>
+                <Image src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66e83e273adb0752a05d8c4d_Fund%20Oracle.PNG" width={700} height={200}/>
                 </div>
               </div> : null}
-              {activeSection === 'DEX' ? <div className="grid gap-[6.5rem] grid-cols-[383px_1fr] auto-cols-fr xl:gap-[9rem] xl:grid-cols-[500px_1fr]">
+              {activeSection === 'DEX' ? <div className="grid gap-[6.5rem] grid-cols-[383px_1fr] auto-cols-fr xl:gap-[5rem] xl:grid-cols-[38%_1fr]">
                 <div className="flex flex-col items-start justify-center">
                   <div className="text-white/60 text-lg tracking-tight mb-8 leading-relaxed">
                     <div className="text-white">
@@ -351,7 +351,7 @@ export default function Features() {
                   </div>
                 </div>
                 <div className="w-full h-full">
-                <Image src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66e83e2c2e58e2df3640ecc7_Price%20chart.svg" width={500} height={200}/>
+                <Image src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66e83e2c2e58e2df3640ecc7_Price%20chart.svg" width={700} height={200}/>
                 </div>
               </div> : null}
             </div>
