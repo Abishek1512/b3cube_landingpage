@@ -3,6 +3,8 @@ import "./globals.css";
 import { Navbar } from "./component/Navbar";
 import DotPatternLinearGradient from "./component/card";
 import { GlareCardDemo } from "./component/Glarecard";
+import TeamCard from "./component/TeamCard";
+import { AppleCardsCarouselDemo } from "./component/CarouselCard";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -53,6 +55,9 @@ export default function RootLayout({ children }) {
           </div>
         </div>
 
+      <TeamCard/>
+
+      <AppleCardsCarouselDemo/>
         {/* Footer */}
         <footer className="bg-gray-100">
           <div className="container mx-auto px-4 py-8">
