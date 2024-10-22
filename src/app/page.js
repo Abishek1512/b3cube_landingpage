@@ -1,8 +1,8 @@
 // import { Card } from "@/components/ui/card";
 'use client'
 import Image from "next/image";
-import Features from "./component/LandingPage/features";
-import Benefits from "./component/LandingPage/Benefits";
+import Features from "../components/LandingPage/features";
+import Benefits from "../components/LandingPage/Benefits";
 import HeroSection from "./herobanner/page"
 function Home() {
   return (
