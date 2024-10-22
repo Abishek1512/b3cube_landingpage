@@ -1,4 +1,4 @@
-import localFont from "next/font/local";
+import { Sora } from 'next/font/google'
 import "./globals.css";
 import Navbar from "./component/Navbar";
 import DotPatternLinearGradient from "./component/card";
@@ -7,16 +7,12 @@ import TeamCard from "./component/TeamCard";
 import { AppleCardsCarouselDemo } from "./component/CarouselCard";
 import Footer from "./component/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const sora = Sora({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  style: ['normal'],
+  subsets: ['latin-ext'],
+  display: 'swap',
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -27,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-base_color`}
+        className={`${sora.className} antialiased text-base_color`}
       >
         <Navbar />
         <main className="min-h-screen pt-16">{children}</main>
