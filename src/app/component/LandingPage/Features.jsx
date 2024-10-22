@@ -24,7 +24,7 @@ export default function Features() {
             Features
           </div>
           <h1 className="font-sora text-4xl text-center tracking-tight mt-0 mb-0 font-normal leading-snug bg-gradient-to-r from-white to-[#A8ABD3] bg-clip-text text-transparent">
-            Everyone's Favorite dApp
+            Everyone's Favorite App
           </h1>
           <p className="color-[#cfced1] text-base text-center tracking-tight mb-0 font-normal leading-relaxed">
             For the investor seeking ease of use, the Fund Manager seeking new
