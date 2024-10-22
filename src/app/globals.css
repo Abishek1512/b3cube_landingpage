@@ -49,6 +49,29 @@ html,body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: var(--background);
   /* font-size: 10px !important; */
+
+  .text-background-gradient {
+    background: linear-gradient(134.9deg, #FFFFFF 9.98%, #A8ABD3 87.41%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .token-vertical-line {
+    background-image: linear-gradient(#07070817 14%, #2c2c2cf0 46%, #04040500);
+    position: absolute;
+  }
+
+    .token-horizontal-line {
+      background-image: linear-gradient(90deg, #07070817, #454545f0 50%, #04040500);
+    }
+
+  .line-is-left {
+    inset: 0% auto 0% 0%;
+  }
+
+  .line-is-right{
+    inset: 0% 0% 0% auto;
+  }
 }
 
 @layer utilities {

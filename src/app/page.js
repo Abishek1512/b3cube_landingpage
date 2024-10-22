@@ -4,6 +4,7 @@ import Image from "next/image";
 import Features from "../components/LandingPage/features";
 import Benefits from "../components/LandingPage/Benefits";
 import HeroSection from "./herobanner/page"
+import TokenInroduction from "../components/IntroToken/Page";
 function Home() {
   return (
     <>
@@ -15,6 +16,7 @@ function Home() {
       <div>
         <Benefits />
       </div>
+      <TokenInroduction />
     {/* </div> */}
     </>
   );
