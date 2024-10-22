@@ -2,7 +2,7 @@
 
 import PropTypes from "prop-types";
 
-function FaqCard({title, content, index, isOpen, toggleAccordion, styles}) {
+function FaqCard({title, content, index, isOpen, toggleAccordion, styles, renderHtmlContent=false}) {
   return (
     <div className={`mb-2 transition-all duration-500 overflow-hidden`}>
       {/* Accordion Header */}
@@ -28,13 +28,13 @@ function FaqCard({title, content, index, isOpen, toggleAccordion, styles}) {
           {/* Accordion Content */}
           <div
             className={`text-[#b7b8be] text-lg mb-0 leading-[1.6] transition-all duration-500 ${
-              isOpen ? "opacity-100 max-h-[500px]" : "opacity-0 max-h-0"
+              isOpen ? "opacity-100 max-h-[1500px]" : "opacity-0 max-h-0"
             }`}
           >
-            <p
+            {renderHtmlContent ? <>{content}</> :<p
               className="pb-6 pl-6 pr-6"
               dangerouslySetInnerHTML={{__html: content}}
-            ></p>
+            ></p>}
           </div>
         </div>
       </div>
