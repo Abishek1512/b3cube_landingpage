@@ -41,6 +41,9 @@ export default function RootLayout({ children }) {
           <div className="md:ml-4 w-full md:w-1/2">
             <GlareCardDemo />
           </div>
+          <div className="md:ml-4 w-full md:w-1/2">
+            <GlareCardDemo />
+          </div>
         </div>
       <TeamCard/>
       
