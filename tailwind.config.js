@@ -12,6 +12,9 @@ module.exports = {
 
 	},
   	extend: {
+		screens: {
+			'max-md': { 'max': '1024px' }
+		},
 		 boxShadow: {
 			'inset-bottom': 'inset 0 -3px #222225', // Custom shadow
 			'inset-bottom-dark': 'inset 0 -2px #00000040'
@@ -63,7 +66,10 @@ module.exports = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+		  fontFamily: {
+			inter: ['Inter', 'sans-serif'],
+		},
   	}
   },
   plugins: [require("tailwindcss-animate")],

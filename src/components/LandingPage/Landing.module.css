@@ -27,3 +27,11 @@
   .sectionContent.active {
     opacity: 1;
   }
+  
+  .faqbg{
+    background: linear-gradient(358.11deg, #13131B -48.63%, #07070B 262.02%);
+    border: 1px solid #ffffff05;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }

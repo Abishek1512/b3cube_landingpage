@@ -1,4 +1,4 @@
-import localFont from "next/font/local";
+import { Sora } from 'next/font/google'
 import "./globals.css";
 import Navbar from "./component/Navbar";
 import DotPatternLinearGradient from "./component/card";
@@ -6,17 +6,15 @@ import { GlareCardDemo } from "./component/Glarecard";
 import TeamCard from "./component/TeamCard";
 import { CarouselCard } from "./component/CarouselCard";
 import Footer from "./component/Footer";
+import AdvisorsSection from '../app/advisors/page'
+import TokenReferral from '../app/tokenReferral/page'
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const sora = Sora({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  style: ['normal'],
+  subsets: ['latin-ext'],
+  display: 'swap',
+})
 
 export const metadata = {
   title: "Create Next App",
@@ -27,28 +25,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-base_color`}
+        className={`${sora.className} antialiased text-base_color`}
       >
         <Navbar />
-        <main className="min-h-screen pt-16">{children}</main>
-        
-        <div className="b3x-ttokens-referral container mx-auto px-8 py-8 my-16 flex flex-col md:flex-row items-center justify-between bg-[#101115]">
-          {/* Content - 50% width */}
-          <div className="text-center md:text-left self-start mb-4 md:mb-0 w-full md:w-1/3">
-            <h4 className="text-2xl"> Get $10 worth of B3X Tokens!</h4>
-            <p className="my-9">
-              Earn $10 in B3X tokens by referring friends! B3X tokens offer
-              governance rights, lower trading fees, and access to exclusive
-              rewards, making them valuable for both traders and investors.
-            </p>
-          </div>
-          <div className="md:ml-4 w-full md:w-1/2">
-            <GlareCardDemo />
-          </div>
-        </div>
-      <TeamCard/>
-      
-      <CarouselCard/>
+        <main className="min-h-screen pt-16">{children}</main>  
+
         {/* Footer */}
         <Footer />
       </body>

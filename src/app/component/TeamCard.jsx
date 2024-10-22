@@ -1,12 +1,12 @@
 
 const TeamCard = () =>{
-  return <section className="w-full overflow-hidden flex flex-col items-start justify-start py-0 px-[104px] box-border max-w-[1440px] text-center mq450:pl-5 mq450:pr-5 mq450:box-border mq850:pl-[52px] mq850:pr-[52px] mq850:box-border">
+  return <section className="w-full overflow-hidden flex flex-col items-start justify-start py-0 px-[104px] box-border max-w-[1440px] mx-auto text-center mq450:px-5 mq850:px-[52px]">
   <div className="self-stretch flex flex-col items-center justify-start max-w-full">
     <div className="self-stretch flex flex-col items-center justify-start py-0 px-5 box-border max-w-full">
-      <div className="flex flex-col items-center justify-start gap-[1rem] gap-font-size-24 max-w-[840px] mq850:max-w-full">
+      <div className="flex flex-col items-center justify-start gap-[1rem] max-w-[840px] mq850:max-w-full">
         <div className="rounded-lg bg-[#CDFE6C] flex flex-col items-start justify-start pt-[7.3px] px-2 pb-2 text-left text-black">
           <div className="flex flex-col items-start justify-start pt-0 px-0 pb-[0.7px]">
-            <a className="[text-decoration:none] text-xs">
+            <a className="[text-decoration:none] font-bold text-xs">
               Our Team
             </a>
           </div>
@@ -36,6 +36,7 @@ const TeamCard = () =>{
     </div>
   </div>
 </section>
+
 }
 
 export default TeamCard

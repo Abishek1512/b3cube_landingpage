@@ -254,7 +254,7 @@ export const Card = ({ card, index, layout = false }) => {
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
 
-        className="rounded-3xl bg-black dark:bg-neutral-900 w-96 md:h-[32rem] md:w-72 overflow-hidden flex flex-col items-start justify-start relative z-10 border border-[#1E1F24]"
+        className="rounded-3xl bg-black dark:bg-neutral-900 w-96 h-[32rem] md:w-72 overflow-hidden flex flex-col items-start justify-start relative z-10 border border-[#1E1F24]"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
 
@@ -262,18 +262,18 @@ export const Card = ({ card, index, layout = false }) => {
 
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
 
-        <div className="relative z-40 py-2 flex flex-col gap-[10px]">
+        <div className="relative z-40 py-2 px-2 flex flex-col gap-[10px]">
 
-          <div className="flex justify-center items-center w-full h-full relative">
+          <div className="flex justify-center items-center w-full h-full relative bg-[#181822] rounded-md">
             <BlurImage
               src={card.src}
               alt={card.title}
               width={270}
               height={245}
-              className="object-cover"
+              className="object-cover mx-14 md:rounded-xl"
             />
           </div>
-          <motion.a className="absolute right-0 m-4">
+          <motion.a className="absolute right-0 mx-4 my-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none"><path 
                 fill="#fff" d="M5.634 2.874c-1.13 0-2.048.916-2.048 2.046s.916 2.068 2.046 2.068S7.68 6.05 7.68 4.92c0-1.13-.916-2.046-2.046-2.046Zm9.99 5.424c-1.72 0-2.704.9-3.175 1.794h-.05V8.539H9.01V19.92h3.53v-5.634c0-1.485.113-2.92 1.95-2.92 1.811 0 1.838 1.693 1.838 3.014v5.54h3.53V13.67c0-3.059-.657-5.37-4.234-5.37Zm-11.757.24v11.383h3.534V8.54H3.867Z" 
                 opacity=".64"/></svg>
@@ -321,7 +321,7 @@ export const BlurImage = ({ height, width, src, className, alt, ...rest }) => {
   return (
     <Image
       className={cn(
-        "transition duration-300 bg-[#181822] m-2 h-[245px]",
+        "transition duration-300 bg-[#181822] md:mx-2 h-[245px]",
         isLoading ? "blur-sm" : "blur-0",
         className
       )}
