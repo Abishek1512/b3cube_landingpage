@@ -6,6 +6,45 @@ type Props = {}
 
 const Footer = (props: Props) => {
 
+  const menuData = [
+    {
+      label: "Main",
+      values: ["Features", "Benefits", "Reward program", "Roadmap"],
+    },
+    {
+      label: "Products",
+      values: ["Perp DEX", "Fund Builder", "Fund Marketplace"],
+    },
+    {
+      label: "Main",
+      values: [
+        "Team",
+        "Blog",
+        "FAQs",
+        "B3X Academy",
+        "Help center",
+        "Privacy Policy",
+        "T&C",
+      ],
+    },
+    {
+      label: "Company",
+      values: ["Missio & Vision", "Careers", "Brand"],
+    },
+    {
+      label: "Governance",
+      values: ["Dashboard", "Forums"],
+    },
+    {
+      label: "Resources",
+      values: ["Whitepaper", "Audit Reports", "Docs"],
+    },
+    {
+      label: "Link",
+      values: ["X (Formerly Twitter)", "Telegram", "Discord"],
+    },
+  ];
+
     const [email, setEmail] = useState("");
 
     const handleSubmit = (e) => {
@@ -149,6 +188,42 @@ const Footer = (props: Props) => {
         <span className="pb-4 text-base font-semibold text-[#ffffff99]">
           By subscribing, I agree to the terms and conditions.
         </span>
+      </div>
+      <div className="menu-component">
+        <div className="flex flex-wrap justify-between gap-20">
+          {menuData?.map((menu) => {
+            const { label, values } = menu ?? {};
+            return (
+              <div key={label} className="flex flex-col gap-4">
+                <h1 className="text-[#fff9]">{menu.label}</h1>
+                {values.map((val) => (
+                  <p className="text-white font-semibold" key={val}>
+                    {val}
+                  </p>
+                ))}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="flex items-center my-10 text-[#ffffff80]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          className="icon icon-tabler icons-tabler-outline icon-tabler-copyright"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+          <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173" />
+        </svg>
+        <h6>2023 B3X.AI, Inc. All Rights Reserved.</h6>
       </div>
     </footer>
   );
