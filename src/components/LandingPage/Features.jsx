@@ -35,7 +35,7 @@ export default function Features() {
           <h1 className="font-sora text-4xl text-center tracking-tight mt-0 mb-0 font-normal leading-snug bg-gradient-to-r from-white to-[#A8ABD3] bg-clip-text text-transparent">
             Everyone's Favorite App
           </h1>
-          <p className="color-[#cfced1] text-base text-center tracking-tight mb-0 font-normal leading-relaxed">
+          <p className="color-[#cfced1] text-base text-center tracking-tight mb-0 font-normal leading-relaxed font-inter">
             For the investor seeking ease of use, the Fund Manager seeking new
             horizons, and the trader craving advanced tools.
           </p>
@@ -116,9 +116,9 @@ const FundBuilder = () => {
             <div className="text-white">
               Build & Grow Your Investment Fund:{" "}
             </div>
-            Design, test, and launch advanced trading strategies using our
+            <span className="font-inter">Design, test, and launch advanced trading strategies using our
             intuitive crypto fund builder. Leverage AI integration and automated
-            trading for superior performance.
+            trading for superior performance.</span>
           </div>
           <div className="grid gap-6 grid-cols-2 grid-rows-[auto_auto] auto-cols-fr mb-16 self-center md:self-start">
             <div className="flex justify-start items-center gap-[0.8rem] text-body-s font-medium leading-[140%]">
@@ -206,9 +206,9 @@ const FundMarketPlace = () => {
             <div className="text-white">
               Join Carefully Crafted Investment Funds:{" "}
             </div>
-            Utilize B3X’s Fund Oracle for real-time, adaptive investment
+            <span className="font-inter">Utilize B3X’s Fund Oracle for real-time, adaptive investment
             management. Mitigate risks with AI-driven insights and customize
-            your portfolio with precision.
+            your portfolio with precision.</span>
           </div>
           <div className="grid gap-6 grid-cols-2 grid-rows-[auto_auto] auto-cols-fr mb-16 self-center md:self-start">
             <div className="flex justify-start items-center gap-[0.8rem] text-body-s font-medium leading-[140%]">
@@ -295,10 +295,10 @@ const FundOracle = () => {
             <div className="text-white">
               Optimize Your Portfolio with Intelligent Fund Management:{" "}
             </div>
-            You’ll never get lost in our Fund Marketplace. Simply define your
+            <span className="font-inter">You’ll never get lost in our Fund Marketplace. Simply define your
             criteria and let the AI select the best expert-managed funds for
             you. Benefit from self-custody, precise performance metrics, and
-            straightforward entry into diverse AI-driven strategies.
+            straightforward entry into diverse AI-driven strategies.</span>
           </div>
           <div className="grid gap-6 grid-cols-2 grid-rows-[auto_auto] auto-cols-fr mb-16 self-center md:self-start">
             <div className="flex justify-start items-center gap-[0.8rem] text-body-s font-medium leading-[140%]">
@@ -385,10 +385,10 @@ const Dex = () => {
             <div className="text-white">
               Decentralised Exchange For Derivatives and Options:{" "}
             </div>
-            We've built a perpetual futures & options DEX using Injective's
+            <span className="font-inter">We've built a perpetual futures & options DEX using Injective's
             shared order book SDK with up to 20x leverage. In Q2 2025, we’ll
             launch our custom multi-chain DEX on Injective, Base, Monad, and
-            Arbitrum, enabling perpetual futures and options trading.
+            Arbitrum, enabling perpetual futures and options trading.</span>
           </div>
           <div className="grid gap-6 grid-cols-2 grid-rows-[auto_auto] auto-cols-fr mb-16 self-center md:self-start">
             <div className="flex justify-start items-center gap-[0.8rem] text-body-s font-medium leading-[140%]">

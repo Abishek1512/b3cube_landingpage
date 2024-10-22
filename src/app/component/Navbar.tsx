@@ -41,7 +41,7 @@ function Navbar() {
             />
             <div className="flex gap-x-20">
               <div className="flex items-center z-50">
-                <nav className="hidden xl:flex text-white gap-x-5">
+                <nav className="hidden xl:flex text-white gap-x-5 font-inter">
                   <a
                     href="#features"
                     className="text-white hover:text-white text-sm"
