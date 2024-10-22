@@ -4,8 +4,10 @@ import Navbar from "./component/Navbar";
 import DotPatternLinearGradient from "./component/card";
 import { GlareCardDemo } from "./component/Glarecard";
 import TeamCard from "./component/TeamCard";
-import { AppleCardsCarouselDemo } from "./component/CarouselCard";
+import { CarouselCard } from "./component/CarouselCard";
 import Footer from "./component/Footer";
+import AdvisorsSection from '../app/advisors/page'
+import TokenReferral from '../app/tokenReferral/page'
 
 const sora = Sora({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
@@ -26,22 +28,8 @@ export default function RootLayout({ children }) {
         className={`${sora.className} antialiased text-base_color`}
       >
         <Navbar />
-        <main className="min-h-screen pt-16">{children}</main>
-        <div className="b3x-ttokens-referral container mx-auto px-8 py-8 flex flex-col md:flex-row items-center justify-between">
-          {/* Content - 50% width */}
-          {/* <div className="text-center md:text-left self-start mb-4 md:mb-0 w-full md:w-1/3">
-            <h4 className="text-2xl"> Get $10 worth of B3X Tokens!</h4>
-            <p className="my-9">
-              Earn $10 in B3X tokens by referring friends! B3X tokens offer
-              governance rights, lower trading fees, and access to exclusive
-              rewards, making them valuable for both traders and investors.
-            </p>
-          </div> */}
-        </div>
+        <main className="min-h-screen pt-16">{children}</main>  
 
-      <TeamCard/>
-
-      <AppleCardsCarouselDemo/>
         {/* Footer */}
         <Footer />
       </body>
