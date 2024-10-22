@@ -8,7 +8,14 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+	container:{
+
+	},
   	extend: {
+		 boxShadow: {
+			'inset-bottom': 'inset 0 -3px #222225', // Custom shadow
+			'inset-bottom-dark': 'inset 0 -2px #00000040'
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
