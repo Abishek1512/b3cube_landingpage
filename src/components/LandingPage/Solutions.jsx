@@ -4,16 +4,16 @@ import styles from './Landing.module.css'
 const Solutions = () => {
     return (
 
-        <section id="solutions" className="section_solutions xl:pt-[120px] ">
-            <div className={`${styles.w_container} w-layout-blockcontainer container w_container block xl:px-[104px] w-full max-w-[1440px] mx-auto`}>
+        <section id="solutions" className="section_solutions xl:pt-[120px] md:pt-[100px] sm:pt-[10px] pt-[50px]">
+            <div className={`${styles.w_container} w-layout-blockcontainer container w_container block xl:px-[104px] w-full max-w-[1440px] mx-auto lg:px-[64px] md:px-[48px] sm:px-[16px] px-[16px]`}>
                 <div className="solutions_wrapper justify-start items-center flex flex-col">
-                    <div className="solutions_top gap-x-[24px] gap-y-[24px] [flex-flow:column] justify-start items-center mb-[48px] flex">
+                    <div className={`${styles.solutions_top} gap-x-[24px] gap-y-[24px] [flex-flow:column] justify-start items-center mb-[48px] flex`}>
                         <div className="label font-[var(--font--sora)] text-[#000] bg-[--color--green] text-[12px] rounded-[8px] p-[8px] font-medium leading-[120%] inline-block">
                             <div className="label_text">Solutions</div>
                         </div>
                         <h2 className={`${styles.heading_bg} heading-style-h2 xl:text-[40px] text-[32px] font-[var(--font--sora)] text-[var(--font-size--laptop--h2)] text-center tracking-[-.3px] mt-0 mb-0 leading-[140%]`}>Your Defi Gateway</h2>
                     </div>
-                    <div data-w-id="a18d496c-e967-bea8-ca36-825255d2d838" className="solutions_cards gap-x-[16px] gap-y-[16px] grid-rows-[auto] grid-cols-[1fr_1fr_1fr] auto-cols-[1fr] items-center grid">
+                    <div data-w-id="a18d496c-e967-bea8-ca36-825255d2d838" className={`${styles.solutions_cards} gap-x-[16px] gap-y-[16px] grid-rows-[auto] grid-cols-[1fr_1fr_1fr] auto-cols-[1fr] items-center grid`}>
                         <div id="w-node-_78fde4c5-67ff-7d23-fd63-8532f4494bbb-70c9e965"
                             data-w-id="78fde4c5-67ff-7d23-fd63-8532f4494bbb" className={`${styles.solution_cards} ${styles.is_third} ${styles.card} ${styles.solutions_card_bg}`}>
                             <img
