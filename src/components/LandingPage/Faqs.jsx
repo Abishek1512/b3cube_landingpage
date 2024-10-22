@@ -2,6 +2,7 @@
 import {useState} from "react";
 import FaqCard from "../../app/component/FaqCard";
 import styles from "./Landing.module.css";
+import SectionHeader from "../SectionHeader";
 
 function FaqList() {
   const [activeAccordions, setActiveAccordions] = useState([]);
@@ -67,9 +68,12 @@ function FaqList() {
 
   return (
     <div className="max-w-5xl mx-auto mt-10">
-      <h1 className="text-3xl font-bold text-center mb-6">
-        Frequently Asked Questions
-      </h1>
+      <SectionHeader
+        primaryButtonText="Our FAQ"
+        title="Frequently asked questions"
+        description="All your questions answered."
+      />
+      <div className="mt-10">
       {accordionData.map((item, index) => (
         <FaqCard
           key={index}
@@ -81,6 +85,7 @@ function FaqList() {
           styles={styles}
         />
       ))}
+      </div>
     </div>
   );
 }

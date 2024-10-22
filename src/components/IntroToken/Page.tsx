@@ -3,6 +3,11 @@ import SectionHeader from '../SectionHeader'
 import Check from '../../../public/icons/check_icon.svg'
 import TokenImage from '../../../public/images/token_image.webp'
 import Image from 'next/image'
+import Commmunity from "../../../public/images/Like-minded Community.webp"
+import Voting from "../../../public/images/voting.webp";
+import Liquidity from "../../../public/images/liquidity.webp";
+import Lowfees from "../../../public/images/lowfees.webp";
+import StackingBenefit from "../../../public/images/stacking-benefits.webp";
 
 type Props = {}
 
@@ -14,6 +19,7 @@ function Page({}: Props) {
         arrowButtonText="Buy B3X Token"
         title="Introducing the B3X Token"
         description="Meet the B3X token, the powerhouse of B3X. It drives transactions, unlocks rewards, and gives users a voice in governance. It is designed to spearhead opportunities and growth in our expanding ecosystem."
+        isArrowButtonVisible
       />
       <div className="min-h-screen text-white p-4 md:p-8">
         <div className="mx-auto relative">
@@ -99,13 +105,36 @@ function Page({}: Props) {
                 <h2 className="text-base font-bold mb-4">
                   Incentives and Rewards
                 </h2>
-                <p className="text-gray-400 text-sm max-w-[380px] mx-auto color-[#fff9]">
+                <p className="text-gray-400 text-sm max-w-[380px] mx-auto color-[#fff9] lg:min-h-[120px] xl:min-h-[80px]">
                   B3X tokens can be used for various incentive programs to
                   attract and retain users and liquidity on the platform.
                 </p>
               </div>
               <div className="hidden max-md:block token-horizontal-line h-[1px]"></div>
             </div>
+          </div>
+        </div>
+        <div className="my-20 max-md:hidden token-horizontal-line h-[1px] w-1/3 mx-auto"></div>
+        <div className="flex justify-between mt-8">
+          <div className="flex flex-col items-center gap-8">
+            <Image src={Commmunity} width={40} height={40} alt=""></Image>
+            <h1 className="font-bold">Like-minded Community</h1>
+          </div>
+          <div className="flex flex-col items-center gap-8">
+            <Image src={Voting} width={40} height={40} alt=""></Image>
+            <h1 className="font-bold">Voting Power</h1>
+          </div>
+          <div className="flex flex-col items-center gap-8">
+            <Image src={Liquidity} width={40} height={40} alt=""></Image>
+            <h1 className="font-bold">Liquidity Mining</h1>
+          </div>
+          <div className="flex flex-col items-center gap-8">
+            <Image src={Lowfees} width={40} height={40} alt=""></Image>
+            <h1 className="font-bold">Low Fees</h1>
+          </div>
+          <div className="flex flex-col items-center gap-8">
+            <Image src={StackingBenefit} width={40} height={40} alt=""></Image>
+            <h1 className="font-bold">Staking Benefits</h1>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import BackTesting from "../../../public/svg/LandingPage/BackTestingTool.svg";
 import {useState} from "react";
 import styles from "./Landing.module.css";
 import FaqCard from "../../app/component/FaqCard";
+import SectionHeader from "../SectionHeader";
 export default function Features() {
   const [activeSection, setActiveSection] = useState("FundBuilder");
   const [fade, setFade] = useState(true);
@@ -29,16 +30,11 @@ export default function Features() {
     <>
       <div className="flex flex-col items-center gap-[2.4rem]">
         <div className="flex flex-col items-center gap-[2.4rem] max-w-[644px]">
-          <div className="bg-[#cdfe6c] font-sora text-black text-xs rounded-lg px-3 py-2 font-medium leading-tight inline-block w-fit">
-            Features
-          </div>
-          <h1 className="font-sora text-4xl text-center tracking-tight mt-0 mb-0 font-normal leading-snug bg-gradient-to-r from-white to-[#A8ABD3] bg-clip-text text-transparent">
-            Everyone's Favorite App
-          </h1>
-          <p className="color-[#cfced1] text-base text-center tracking-tight mb-0 font-normal leading-relaxed font-inter">
-            For the investor seeking ease of use, the Fund Manager seeking new
-            horizons, and the trader craving advanced tools.
-          </p>
+         <SectionHeader
+         primaryButtonText="Features"
+         title="Everyone's Favorite App"
+         description="For the investor seeking ease of use, the Fund Manager seeking new horizons, and the trader craving advanced tools."
+         />
         </div>
         <div className="hidden md:block container">
           <div className="flex mb-16 ml-auto mr-auto flex-col">
