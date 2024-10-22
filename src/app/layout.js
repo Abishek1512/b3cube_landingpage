@@ -4,7 +4,7 @@ import Navbar from "./component/Navbar";
 import DotPatternLinearGradient from "./component/card";
 import { GlareCardDemo } from "./component/Glarecard";
 import TeamCard from "./component/TeamCard";
-import { AppleCardsCarouselDemo } from "./component/CarouselCard";
+import { CarouselCard } from "./component/CarouselCard";
 import Footer from "./component/Footer";
 
 const sora = Sora({
@@ -27,7 +27,8 @@ export default function RootLayout({ children }) {
       >
         <Navbar />
         <main className="min-h-screen pt-16">{children}</main>
-        <div className="b3x-ttokens-referral container mx-auto px-8 py-8 flex flex-col md:flex-row items-center justify-between">
+        
+        <div className="b3x-ttokens-referral container mx-auto px-8 py-8 my-16 flex flex-col md:flex-row items-center justify-between bg-[#101115]">
           {/* Content - 50% width */}
           {/* <div className="text-center md:text-left self-start mb-4 md:mb-0 w-full md:w-1/3">
             <h4 className="text-2xl"> Get $10 worth of B3X Tokens!</h4>
@@ -37,11 +38,13 @@ export default function RootLayout({ children }) {
               rewards, making them valuable for both traders and investors.
             </p>
           </div> */}
+          <div className="md:ml-4 w-full md:w-1/2">
+            <GlareCardDemo />
+          </div>
         </div>
-
       <TeamCard/>
-
-      <AppleCardsCarouselDemo/>
+      
+      <CarouselCard/>
         {/* Footer */}
         <Footer />
       </body>
