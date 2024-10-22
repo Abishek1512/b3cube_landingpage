@@ -11,6 +11,9 @@ import { CarouselCard } from "./component/CarouselCard";
 import HeroSection from "./herobanner/page"
 import TokenInroduction from "../components/IntroToken/Page";
 import Faqs from '../components/LandingPage/Faqs'
+import Solutions from '../components/LandingPage/Solutions'
+import Tokenomics from '../components/LandingPage/Tokenomics'
+
 function Home() {
   return (
     <>
@@ -19,11 +22,13 @@ function Home() {
       <div className="my-8">
         <Features />
       </div>
+      <Solutions/>
       <div>
         <Benefits />
       </div>
 
       <TokenInroduction />
+      <Tokenomics/>
     {/* </div> */}
       <section className="container mx-auto">
         <Faqs />
