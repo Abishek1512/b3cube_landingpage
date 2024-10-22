@@ -12,6 +12,9 @@ module.exports = {
 
 	},
   	extend: {
+		screens: {
+			'max-md': { 'max': '1024px' }
+		},
 		 boxShadow: {
 			'inset-bottom': 'inset 0 -3px #222225', // Custom shadow
 			'inset-bottom-dark': 'inset 0 -2px #00000040'

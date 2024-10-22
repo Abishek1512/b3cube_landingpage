@@ -5,8 +5,8 @@ import Features from "../components/LandingPage/features";
 import Benefits from "../components/LandingPage/Benefits";
 import HeroSection from "./herobanner/page";
 import Solutions from '../components/LandingPage/Solutions'
-import Tokenomics from '../components/LandingPage/Tokenomics'
 
+import TokenInroduction from "../components/IntroToken/Page";
 function Home() {
   return (
     <>
@@ -19,7 +19,7 @@ function Home() {
       <div>
         <Benefits />
       </div>
-      <Tokenomics/>
+      <TokenInroduction />
     {/* </div> */}
     </>
   );
