@@ -3,7 +3,9 @@
 import Image from "next/image";
 import Features from "../components/LandingPage/features";
 import Benefits from "../components/LandingPage/Benefits";
-import HeroSection from "./herobanner/page"
+import HeroSection from "./herobanner/page";
+import Solutions from '../components/LandingPage/Solutions'
+
 function Home() {
   return (
     <>
@@ -12,6 +14,7 @@ function Home() {
       <div className="my-8">
         <Features />
       </div>
+      <Solutions/>
       <div>
         <Benefits />
       </div>
