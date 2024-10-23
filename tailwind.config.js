@@ -79,6 +79,9 @@ module.exports = {
 			extrabold: 800,
 			black: 900,
 		  },
+		  boxShadow: {
+			'button-inset': 'inset 0 -2px 0 #00000040',
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate")],

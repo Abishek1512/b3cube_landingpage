@@ -12,6 +12,7 @@ import Faqs from '../components/LandingPage/Faqs'
 import Solutions from '../components/LandingPage/Solutions'
 import Tokenomics from '../components/LandingPage/Tokenomics'
 import { ScaleAnimation } from '../app/component/ScalingAnimation'
+import CommunityCard from '../components/LandingPage/CommunityCard'
 
 function Home() {
   return (
@@ -31,6 +32,7 @@ function Home() {
         <TeamCard />
         <CarouselCard />
         <AdvisorsSection />
+        <CommunityCard />
     </div>
   );
 }

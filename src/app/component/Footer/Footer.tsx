@@ -47,7 +47,7 @@ const Footer = (props: Props) => {
 
 
   return (
-    <footer className="container px-4 mx-auto grid gap-20">
+    <footer className="container px-4 mx-auto grid gap-20 mt-20">
       <div className="flex justify-between">
         <Image
           className="z-50"
