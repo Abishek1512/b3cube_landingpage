@@ -3,8 +3,8 @@ import { GlareCardDemo } from "../component/Glarecard";
 const TokenReferral = () => {
   return (
 
-    <div className="b3x-ttokens-referral container mx-auto px-8 py-8 my-16 flex flex-col md:flex-row items-center justify-between bg-[#101115]">
-      <div className="text-center md:text-left self-start mb-4 md:mb-0 w-full md:w-1/3">
+    <div className="b3x-ttokens-referral container mx-auto px-8 py-12 my-16 flex flex-col md:flex-col lg:flex-row items-center justify-between bg-[#101115] md:gap-3 gap-7">
+      <div className="text-center md:text-left self-start mb-4 md:mb-0 w-full ">
         <h4 className="text-2xl font-bold"> Get $10 worth of B3X Tokens!</h4>
         <p className="my-9">
           Earn $10 in B3X tokens by referring friends! B3X tokens offer
@@ -30,7 +30,7 @@ const TokenReferral = () => {
           </div>
         </div>
       </div>
-      <div className="md:ml-4 w-full md:w-1/2">
+      <div className="md:ml-4 w-full">
         <GlareCardDemo />
       </div>
     </div>

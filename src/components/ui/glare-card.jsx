@@ -4,7 +4,8 @@ import { useRef } from "react";
 
 export const GlareCard = ({
   children,
-  className
+  className,
+  transformProps
 }) => {
   const isPointerInside = useRef(false);
   const refElement = useRef(null);
@@ -62,13 +63,14 @@ export const GlareCard = ({
       refElement.current?.style.setProperty("--bg-y", `${background.y}%`);
     }
   };
+
   return (
     (<div
       style={containerStyle}
-      className="relative isolate [contain:layout_style] [perspective:600px] transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-transform  w-[200px] [aspect-ratio:17/21]"
+      className={`relative isolate [contain:layout_style] [perspective:600px] transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] will-change-transform  w-[200px] [aspect-ratio:17/21] ${transformProps}`}
       ref={refElement}
       onPointerMove={(event) => {
-        const rotateFactor = 0.4;
+        const rotateFactor = -0.8;
         const rect = event.currentTarget.getBoundingClientRect();
         const position = {
           x: event.clientX - rect.left,
@@ -79,8 +81,8 @@ export const GlareCard = ({
           y: (100 / rect.height) * position.y,
         };
         const delta = {
-          x: percentage.x - 50,
-          y: percentage.y - 50,
+          x: percentage.x - 70,
+          y: percentage.y - 70,
         };
 
         const { background, rotate, glare } = state.current;
@@ -114,10 +116,10 @@ export const GlareCard = ({
         }
       }}>
       <div
-        className="h-full grid will-change-transform origin-center transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] [transform:rotateY(var(--r-x))_rotateX(var(--r-y))] rounded-[var(--radius)] border border-slate-800 hover:[--opacity:0.6] hover:[--duration:200ms] hover:[--easing:linear] hover:filter-none overflow-hidden">
+        className="h-full grid will-change-transform origin-center transition-transform duration-[var(--duration)] ease-[var(--easing)] delay-[var(--delay)] [transform:rotateY(var(--r-x))_rotateX(var(--r-y))] rounded-[var(--radius)] border border-slate-800">
         <div
           className="w-full h-full grid [grid-area:1/1] mix-blend-soft-light [clip-path:inset(0_0_0_0_round_var(--radius))]">
-          <div className={cn("h-full w-full bg-slate-950", className)}>
+          <div className={cn("h-full w-full", className)}>
             {children}
           </div>
         </div>
