@@ -76,10 +76,10 @@ const HeroSection = () => {
     return (
 
         <section id="hero" className={` bg-[50%] bg-no-repeat bg-cover pt-[36px]`}>
-            <div className={` ${styles.w_container} w-full xl:max-w-[1440px] block px-[64px] md:max-w-[1440px] xl:max-w-[1440px] xl:ml-auto xl:mr-auto`}>
+            <div className={` ${styles.w_container} ${styles.container} w-full block px-[64px] md:px-[48px] md:max-w-[1440px] lg:max-w-[1440px] xl:max-w-[1440px] xl:ml-auto xl:mr-auto`}>
                 <div className={styles.hero_wrapper}>
-                    <div className={` gap-x-[60px] gap-y-[60px] grid-rows-[auto] grid-cols-[394px_1fr] auto-cols-[1fr] grid xl:grid-cols-[540px_1fr] md:gap-x-[48px] md:gap-y-[48px] md:grid-cols-[1fr] lg:gap-x-[60px] lg:gap-y-[60px] lg:grid-rows-[auto] lg:grid-cols-[394px_1fr] lg:auto-cols-[1fr] lg:grid`}>
-                        <div className={`self-center md:[grid-area:span_1_/_span_1_/_span_1_/_span_1] md:place-self-center md:[flex-flow:column] md:justify-start md:items-center md:max-w-[516px] md:flex`}>
+                    <div className={` gap-x-[60px] gap-y-[60px] grid-rows-[auto] auto-cols-[1fr] grid grid-cols-[560px_1fr] xl:grid-cols-[560px_1fr] md:gap-x-[48px] md:gap-y-[48px] md:grid-cols-[1fr] lg:gap-x-[60px] lg:gap-y-[60px] lg:grid-rows-[auto] lg:grid-cols-[394px_1fr] lg:auto-cols-[1fr] lg:grid`}>
+                        <div className={`self-center md:[grid-area:span_1_/_span_1_/_span_1_/_span_1] md:place-self-center md:[flex-flow:column] md:justify-start md:items-center md:max-w-[516px] md:flex  lg:self-center xl:self-center lg:block xl:block lg:place-self-center xl:place-self-center`}>
                             <div data-w-id="24148052-0508-b3d0-ee2b-ef28262d5109" className={'gap-x-[8px] gap-y-[8px] bg-[#1c1c1d] border-[1px] border-[solid] border-[#ffffff0d] rounded-[8px] justify-start items-center mb-[20px] pl-[6px] pr-[12px] py-[6px] inline-flex'}>
                                 <div className={'gap-x-[8px] rounded-[4px] justify-start items-center px-[5px] py-[3px] flex  gap-x-[2px] gap-y-[2px]  bg-[#d4ff2617]'}>
                                     <div className="traders_number-icon-wrapper">
@@ -94,7 +94,7 @@ const HeroSection = () => {
                                 </div>
                                 <div className={'font-[var(--font--sora)] text-[12px] font-semibold'}>All Time Traders</div>
                             </div>
-                            <h1 data-w-id="f4b480cd-a3bb-2df9-5bd5-145ca8420f25" className={` ${styles.heading_style_h1_sub} font-[var(--font--sora)] xl:text-[42px] lg:text-[36px] sm:text-[32px] mt-0 mb-[24px] font-normal leading-[140%] md:text-center md:text-[36px]`}>Build, Manage, and Invest
+                            <h1 data-w-id="f4b480cd-a3bb-2df9-5bd5-145ca8420f25" className={` ${styles.heading_style_h1_sub} font-[var(--font--sora)] xl:text-[42px] lg:text-[36px] sm:text-[32px] mt-0 mb-[24px] font-normal leading-[140%] md:text-center md:text-[36px] xl:text-[50px] xl:text-left lg:text-left `}>Build, Manage, and Invest
                                 in DeFi Crypto Funds <span className={styles.h1_accent}>with AI</span></h1>
                             <p data-w-id="09655fda-43f8-5554-1956-d0f583583dc3" className={`text-[16px] mb-[32px] lg:text-[14px] leading-[160%] md:text-center ${styles.hero_sub_text}`}>B3X is the most advanced AI-driven
                                 protocol for DeFi, allowing anyone to invest, build, and manage their crypto fund for perpetual
@@ -128,33 +128,9 @@ const HeroSection = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* <div id="w-node-_3b7ddaf9-015a-5121-c351-149dd7cd6d4c-70c9e965"
-                            className={`${styles.hero_main_right_style}  justify-self-end justify-center items-center h-full min-h-[550px] flex relative overflow-hidden`}>
-
-
-
-                                <img
-                                src={'/pricechart.png'} loading="eager" alt=""
-                                className={'align-middle max-w-full inline-block max-h-[400px] md:max-h-[256px]'} />
-
-
-                            <img src="/herobgpatten1024.webp"
-                                loading="eager" sizes="(max-width: 991px) 100vw, (max-width: 1439px) 379.25px, 100vw"
-                                srcSet="/herobgpatten1024.webp 500w, /herobgpatten1024.webp 764w"
-                                alt="" className={styles.hero_right_bg} />
-                                <img
-                                src="/herobgp1440.webp" loading="eager"
-                                sizes="(max-width: 1439px) 100vw, 451.566650390625px"
-                                srcSet="/herobgp1440.webp 500w, /herobgp1440.webp 1080w, /herobgp1440.webp 1101w"
-                                alt="" className={`${styles.hero_right_bg} ${styles.is_desk}`} />
-                                <img
-                                src="/herobgp768.webp" loading="eager"
-                                sizes="(max-width: 479px) 100vw, (max-width: 767px) 96vw, (max-width: 991px) 90vw, 100vw"
-                                srcSet="/herobgp768.webp 500w, /herobgp768.webp 800w, /herobgp768.webp 1080w, /herobgp768.webp 1344w"
-                                alt="" className={`${styles.hero_right_bg} ${styles.is_tablet}`} />
-                        </div> */}
-                        <div id="w-node-_3b7ddaf9-015a-5121-c351-149dd7cd6d4c-70c9e965" data-w-id="3b7ddaf9-015a-5121-c351-149dd7cd6d4c" class={`${styles.hero_main_right_style} justify-self-end justify-center items-center h-full min-h-[550px] flex relative overflow-hidden md:min-h-[300px] rounded-[14px] md:justify-self-auto`}  >
-                            <img src={'/pricechartnew.svg'} loading="eager" alt="" class="align-middle max-w-full inline-block max-h-[400px] md:max-h-[256px]" />
+                       
+                        <div id="w-node-_3b7ddaf9-015a-5121-c351-149dd7cd6d4c-70c9e965" data-w-id="3b7ddaf9-015a-5121-c351-149dd7cd6d4c" class={`${styles.hero_main_right_style} justify-self-end justify-center items-center h-full min-h-[550px] flex relative overflow-hidden md:min-h-[300px] rounded-[14px] md:justify-self-auto lg:justify-self-end`}  >
+                            <img src={'/pricechartnew.svg'} loading="eager" alt="" class="align-middle max-w-full inline-block max-h-[400px] md:max-h-[256px] lg:max-h-[400px] xl:max-h-[400px]" />
                             {/* <div class="hero_trustpilot is-mobile">
                                 <img src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e97c_trustpilot-logo.svg" loading="eager" alt="" class="trustpilot_logo" />
                                 <img src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e98b_trustpilot-stars.svg" loading="eager" width="129" alt="" class="trustpilot_stars" />
