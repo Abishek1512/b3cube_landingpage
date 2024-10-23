@@ -1,12 +1,12 @@
 export default function CommunityCard() {
   return (
     <div className="container mx-auto">
-      <div className="rounded-[20px] p-20 bg-[100%_0%] bg-cover bg-[url('https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9ea4f_cta2_bg-1024.svg')]">
+      <div className="flex flex-col items-center md:items-start rounded-[20px] p-20 bg-[100%_0%] bg-cover bg-[url('https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9ea4f_cta2_bg-1024.svg')]">
         <div className="lg:max-w-[675px] max-w-[480px]">
-          <div className="text-[40px] leading-[140%] tracking-[-0.3px] lg:max-w-[460px] max-w-[350px] text-left mb-5 bg-gradient-to-r from-white to-[#A8ABD3] bg-clip-text text-transparent">
+          <div className="text-[40px] leading-[140%] tracking-[-0.3px] lg:max-w-[460px] md:max-w-[350px] text-center md:text-left mb-5 bg-gradient-to-r from-white to-[#A8ABD3] bg-clip-text text-transparent">
             Join the community and start trading
           </div>
-          <p className="text-left tracking-[-0.2px] leading-[160%] mb-7 text-base text-[#cfced1]">
+          <p className="text-center md:text-left tracking-[-0.2px] leading-[160%] mb-7 text-base text-[#cfced1]">
             The B3X platform’s development and expansion will be guided by a
             comprehensive roadmap, divided into quarterly milestones.
           </p>
