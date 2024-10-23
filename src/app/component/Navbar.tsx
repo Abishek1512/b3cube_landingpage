@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
+import B3xLogo from '../../../public/images/b3xlogo.svg'
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -11,6 +11,7 @@ function Navbar() {
    useEffect(() => {
      setLoaded(true);
    }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY
@@ -36,13 +37,7 @@ function Navbar() {
       <div className=" container mx-auto">
         <div className="flex justify-between py-6">
           <div className="flex gap-20">
-            <Image
-              className="z-50"
-              width={100}
-              height={20}
-              src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9eb_logo.svg"
-              alt=""
-            />
+            <B3xLogo className="z-50 items-center h-full"/>
             <div className="flex gap-x-20">
               <div className="flex items-center z-50">
                 <nav className="hidden xl:flex text-white gap-x-5 font-inter">

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const withFadeInUpAnimation = (WrappedComponent) => {
+  // eslint-disable-next-line react/display-name
   return ({ delay = 0, ...props }) => {
     const ref = useRef(null);
     const [hasAnimated, setHasAnimated] = useState(false); // New state to track if the animation has run

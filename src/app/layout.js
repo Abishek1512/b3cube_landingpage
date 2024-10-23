@@ -1,13 +1,8 @@
 import { Sora } from 'next/font/google'
 import "./globals.css";
-import Navbar from "./component/Navbar";
-import DotPatternLinearGradient from "./component/card";
-import { GlareCardDemo } from "./component/Glarecard";
-import TeamCard from "./component/TeamCard";
-import { CarouselCard } from "./component/CarouselCard";
-import Footer from "./component/Footer";
-import AdvisorsSection from '../app/advisors/page'
-import TokenReferral from '../app/tokenReferral/page'
+// import Navbar from "./component/Navbar";
+import Footer from "./component/Footer/Footer";
+import Navbar from './component/Navbar/Navbar';
 
 const sora = Sora({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],

@@ -3,6 +3,7 @@ import { Doughnut } from 'react-chartjs-2';
 import styles from './Landing.module.css'
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import AllocationTable from '../../app/component/AllocationTable';
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
@@ -70,82 +71,85 @@ const Tokenomics = () => {
                             strategically planned to guide us from initial development through public launch.</div>
                     </div>
                     <div className={styles.tokenomics_main_wrapper}>
-                        <div className={styles.tokenomics_main}>
-                            <div className="w-dyn-list">
-                                <div role="list" className={`${styles.tokenomics_fields} w-dyn-items`}>
-                                    <div role="listitem" className="w-dyn-item">
-                                        <div chart_segment="chart-segment--is-orange" className={styles.tokenomics_field}>
-                                            <div className={styles.tokenomics_field_left}>
-                                                <div style={{ backgroundColor: '#2940a9' }} className={styles.tokenomics_bullet_point}></div>
-                                                <div className={styles.tokenomics_field_percent}>5.71%</div>
-                                                <div className={styles.tokenomics_field_name}>Seed</div>
-                                            </div>
-                                            <div className={styles.tokenomics_field_amount}>57,142,850</div>
-                                        </div>
-                                    </div>
-                                    <div role="listitem" className="w-dyn-item">
-                                        <div chart_segment="chart-segment--is-orange" className={styles.tokenomics_field}>
-                                            <div className={styles.tokenomics_field_left}>
-                                                <div style={{ backgroundColor: '#a8abd3' }} className={styles.tokenomics_bullet_point}></div>
-                                                <div className={styles.tokenomics_field_percent}>7.71%</div>
-                                                <div className={styles.tokenomics_field_name}>Private</div>
-                                            </div>
-                                            <div className={styles.tokenomics_field_amount}>77,100,000</div>
-                                        </div>
-                                    </div>
-                                    <div role="listitem" className="w-dyn-item">
-                                        <div chart_segment="chart-segment--is-orange" className={styles.tokenomics_field}>
-                                            <div className={styles.tokenomics_field_left}>
-                                                <div style={{ backgroundColor: 'hsla(189, 60.03%, 60.80%, 1.00)' }} className={styles.tokenomics_bullet_point}>
-                                                </div>
-                                                <div className={styles.tokenomics_field_percent}>1.17%</div>
-                                                <div className={styles.tokenomics_field_name}>KOL</div>
-                                            </div>
-                                            <div className={styles.tokenomics_field_amount}>11,666,667</div>
-                                        </div>
-                                    </div>
-                                    <div role="listitem" className="w-dyn-item">
-                                        <div chart_segment="chart-segment--is-orange" className={styles.tokenomics_field}>
-                                            <div className={styles.tokenomics_field_left}>
-                                                <div style={{ backgroundColor: 'hsla(111, 81.86%, 50.38%, 1.00)' }} className={styles.tokenomics_bullet_point}>
-                                                </div>
-                                                <div className={styles.tokenomics_field_percent}>3.13%</div>
-                                                <div className={styles.tokenomics_field_name}>Community</div>
-                                            </div>
-                                            <div className={styles.tokenomics_field_amount}>31,250,000</div>
-                                        </div>
-                                    </div>
-                                    <div role="listitem" className="w-dyn-item">
-                                        <div chart_segment="chart-segment--is-orange" className={styles.tokenomics_field}>
-                                            <div className={styles.tokenomics_field_left}>
-                                                <div style={{ backgroundColor: "hsla(218, 77.80%, 50.46%, 1.00)" }} className={styles.tokenomics_bullet_point}>
-                                                </div>
-                                                <div className={styles.tokenomics_field_percent}>2.29%</div>
-                                                <div className={styles.tokenomics_field_name}>Public</div>
-                                            </div>
-                                            <div className={styles.tokenomics_field_amount}>22,857,000</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div id="w-node-_75ad4af9-b073-017b-2437-820053e1e17a-70c9e965" className={styles.tokenomics_chart}>
-                                <div className="tokenomics_chart-image w-embed">
-                                </div>
+                        <div className={`flex flex-col ${styles.tokenomics_main}`}>
+                            <div className="flex justify-around">
                                 <div className="w-dyn-list">
-                                    <div role="list" className="w-dyn-items">
+                                    <div role="list" className={`${styles.tokenomics_fields} w-dyn-items`}>
                                         <div role="listitem" className="w-dyn-item">
-                                            <div className="w-embed w-script">
-                                                <div>
-                                                    <Doughnut data={data} options={options} height={300} />
+                                            <div chart_segment="chart-segment--is-orange" className={styles.tokenomics_field}>
+                                                <div className={styles.tokenomics_field_left}>
+                                                    <div style={{ backgroundColor: '#2940a9' }} className={styles.tokenomics_bullet_point}></div>
+                                                    <div className={styles.tokenomics_field_percent}>5.71%</div>
+                                                    <div className={styles.tokenomics_field_name}>Seed</div>
                                                 </div>
-
+                                                <div className={styles.tokenomics_field_amount}>57,142,850</div>
+                                            </div>
+                                        </div>
+                                        <div role="listitem" className="w-dyn-item">
+                                            <div chart_segment="chart-segment--is-orange" className={styles.tokenomics_field}>
+                                                <div className={styles.tokenomics_field_left}>
+                                                    <div style={{ backgroundColor: '#a8abd3' }} className={styles.tokenomics_bullet_point}></div>
+                                                    <div className={styles.tokenomics_field_percent}>7.71%</div>
+                                                    <div className={styles.tokenomics_field_name}>Private</div>
+                                                </div>
+                                                <div className={styles.tokenomics_field_amount}>77,100,000</div>
+                                            </div>
+                                        </div>
+                                        <div role="listitem" className="w-dyn-item">
+                                            <div chart_segment="chart-segment--is-orange" className={styles.tokenomics_field}>
+                                                <div className={styles.tokenomics_field_left}>
+                                                    <div style={{ backgroundColor: 'hsla(189, 60.03%, 60.80%, 1.00)' }} className={styles.tokenomics_bullet_point}>
+                                                    </div>
+                                                    <div className={styles.tokenomics_field_percent}>1.17%</div>
+                                                    <div className={styles.tokenomics_field_name}>KOL</div>
+                                                </div>
+                                                <div className={styles.tokenomics_field_amount}>11,666,667</div>
+                                            </div>
+                                        </div>
+                                        <div role="listitem" className="w-dyn-item">
+                                            <div chart_segment="chart-segment--is-orange" className={styles.tokenomics_field}>
+                                                <div className={styles.tokenomics_field_left}>
+                                                    <div style={{ backgroundColor: 'hsla(111, 81.86%, 50.38%, 1.00)' }} className={styles.tokenomics_bullet_point}>
+                                                    </div>
+                                                    <div className={styles.tokenomics_field_percent}>3.13%</div>
+                                                    <div className={styles.tokenomics_field_name}>Community</div>
+                                                </div>
+                                                <div className={styles.tokenomics_field_amount}>31,250,000</div>
+                                            </div>
+                                        </div>
+                                        <div role="listitem" className="w-dyn-item">
+                                            <div chart_segment="chart-segment--is-orange" className={styles.tokenomics_field}>
+                                                <div className={styles.tokenomics_field_left}>
+                                                    <div style={{ backgroundColor: "hsla(218, 77.80%, 50.46%, 1.00)" }} className={styles.tokenomics_bullet_point}>
+                                                    </div>
+                                                    <div className={styles.tokenomics_field_percent}>2.29%</div>
+                                                    <div className={styles.tokenomics_field_name}>Public</div>
+                                                </div>
+                                                <div className={styles.tokenomics_field_amount}>22,857,000</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div className={styles.tokenomics_number}>$ 5m</div>
+
+                                <div id="w-node-_75ad4af9-b073-017b-2437-820053e1e17a-70c9e965" className={styles.tokenomics_chart}>
+                                    <div className="tokenomics_chart-image w-embed">
+                                    </div>
+                                    <div className="w-dyn-list">
+                                        <div role="list" className="w-dyn-items">
+                                            <div role="listitem" className="w-dyn-item">
+                                                <div className="w-embed w-script">
+                                                    <div>
+                                                        <Doughnut data={data} options={options} height={300} />
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className={styles.tokenomics_number}>$ 5m</div>
+                                </div>
                             </div>
+                            <AllocationTable />
                         </div>
                         <div className="tokenomics_main-image-wrapper">
                             <img
