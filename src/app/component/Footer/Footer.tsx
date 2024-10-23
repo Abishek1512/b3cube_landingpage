@@ -48,7 +48,7 @@ const Footer = (props: Props) => {
 
 
   return (
-    <footer className="container px-4 mx-auto grid gap-20 mt-20 bg-[url('https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9ea52_footer-bg.webp')] bg-no-repeat bg-bottom">
+    <footer className="container px-4 mx-auto grid gap-20 mt-20">
       <div className="flex justify-between">
         <Image
           className="z-50"
