@@ -2,7 +2,12 @@ import React from "react";
 
 const AdvisorCard = ({ name, role, image, companies, linkedIn }) => {
   return (
-    <div className="bg-[#17181D] rounded-2xl p-4 sm:p-6 flex flex-col  border border-[#292934] w-[400px] mx-auto">
+    <div className="bg-[#17181D] 
+     rounded-2xl p-4 sm:p-6 flex flex-col  border border-[#292934] w-[400px] mx-auto"
+     style={{
+    background: 'linear-gradient(180deg, rgba(54, 55, 84, 0.16) 0%, rgba(120, 122, 186, 0.16) 100%)',
+  }}
+     >
       <div className="flex items-start sm:items-center justify-between">
         <div className="flex flex-col sm:flex-row sm:items-center gap-4">
           <img
@@ -12,7 +17,7 @@ const AdvisorCard = ({ name, role, image, companies, linkedIn }) => {
           />
           <div className="flex flex-col gap-2">
             <div>
-              <h3 className="text-white text-lg sm:text-xl font-medium">
+              <h3 className="text-white sm:text-xl text-base">
                 {name}
               </h3>
               <p className="text-gray-400 text-xs sm:text-sm">{role}</p>
