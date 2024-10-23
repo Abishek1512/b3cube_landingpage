@@ -6,7 +6,7 @@ import { GlareCardDemo } from "./component/Glarecard";
 import TeamCard from "./component/TeamCard";
 import { CarouselCard } from "./component/CarouselCard";
 import Footer from "./component/Footer";
-import AdvisorsSection from '../app/advisors/page'
+import AdvisorsSection from './component/AdvisorsCards'
 import TokenReferral from '../app/tokenReferral/page'
 
 const sora = Sora({
