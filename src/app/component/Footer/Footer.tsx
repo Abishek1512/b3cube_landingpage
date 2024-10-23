@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image';
 import React from "react";
 import FooterEmail from './FooterEmail';
@@ -47,7 +48,7 @@ const Footer = (props: Props) => {
 
 
   return (
-    <footer className="container px-4 mx-auto grid gap-20 mt-20">
+    <footer className="container px-4 mx-auto grid gap-20 mt-20 bg-[url('https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9ea52_footer-bg.webp')] bg-no-repeat bg-bottom">
       <div className="flex justify-between">
         <Image
           className="z-50"
@@ -114,7 +115,8 @@ const Footer = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="w-1/2 grid grid-cols-2">
+      <div className='flex justify-between items-end'>
+      <div className="w-1/2 grid md:grid-cols-2 grid-cols-1">
         <div>
           <h6 className="pb-4 text-base font-semibold text-[#ffffff99]">
             Head Office
@@ -136,23 +138,36 @@ const Footer = (props: Props) => {
           </span>
         </div>
       </div>
-      <div className="subscription grid gap-8">
-        <h6>Subscribe to our newsletter</h6>
-        <div>
-          <FooterEmail />
+      <a onClick={(e) => { e.preventDefault(); document.querySelector("#hero").scrollIntoView({ behavior: "smooth" })}} className="md:hidden flex cursor-pointer border-[0.6px] border-[#ffffff80] rounded-full justify-center items-center w-[92px] h-[92px] transition-all duration-300 ease-in-out">
+          <svg width="33" height="34" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.3047 2.10156L3.27564 15.1306M16.3047 2.10156L29.3337 15.1306M16.3047 2.10156V32.9968" stroke="white" stroke-width="0.853603"></path>
+          </svg>
+        </a>
+      </div>
+      <div className="flex justify-between items-end">
+        <div className="subscription grid gap-8">
+          <h6>Subscribe to our newsletter</h6>
+          <div>
+            <FooterEmail />
+          </div>
+          <span className="pb-4 text-base font-semibold text-[#ffffff99]">
+            By subscribing, I agree to the terms and conditions.
+          </span>
         </div>
-        <span className="pb-4 text-base font-semibold text-[#ffffff99]">
-          By subscribing, I agree to the terms and conditions.
-        </span>
+        <a onClick={(e) => { e.preventDefault(); document.querySelector("#hero").scrollIntoView({ behavior: "smooth" })}} className="hidden md:flex cursor-pointer border-[0.6px] border-[#ffffff80] rounded-full justify-center items-center w-[92px] h-[92px] transition-all duration-300 ease-in-out">
+          <svg width="33" height="34" viewBox="0 0 33 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.3047 2.10156L3.27564 15.1306M16.3047 2.10156L29.3337 15.1306M16.3047 2.10156V32.9968" stroke="white" stroke-width="0.853603"></path>
+          </svg>
+        </a>
       </div>
       <div className="menu-component">
-        <div className="flex flex-wrap justify-between gap-20">
-          {menuData?.map((menu) => {
-            const { label, values } = menu ?? {};
+        <div className="flex flex-wrap justify-between gap-12">
+          {menuData?.map(menu => {
+            const {label, values} = menu ?? {};
             return (
               <div key={label} className="flex flex-col gap-4">
                 <h1 className="text-[#fff9]">{menu.label}</h1>
-                {values.map((val) => (
+                {values.map(val => (
                   <p className="text-white font-semibold" key={val}>
                     {val}
                   </p>
@@ -162,7 +177,7 @@ const Footer = (props: Props) => {
           })}
         </div>
       </div>
-      <div className="flex items-center my-10 text-[#ffffff80]">
+      <div className="flex items-center my-10 text-[#ffffff80] border-t border-[#101115] pt-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
