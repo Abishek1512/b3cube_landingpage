@@ -1,14 +1,5 @@
 "use client";
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  createContext,
-  useContext,
-} from "react";
-import {
-  IconX,
-} from "@tabler/icons-react";
+import React, { useEffect, useRef, useState, createContext, useContext } from "react";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { cn } from '../../lib/utils';
 import { AnimatePresence, motion } from "framer-motion";
@@ -21,15 +12,18 @@ export const CarouselContext = createContext({
 });
 
 export const Carousel = ({ items, initialScroll = 0 }) => {
-  const carouselRef = React.useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = React.useState(false);
-  const [canScrollRight, setCanScrollRight] = React.useState(true);
+  const carouselRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeftStart, setScrollLeftStart] = useState(0);
 
-  const totalSlides = 8;
-  const visibleSlides = 4; // Number of slides visible at a time
-  const progressDots = 5; // Number of progress dots
-  const slideWidth = 300; // Width of each slide
+  const totalSlides = items.length;
+  const visibleSlides = 4;
+  const progressDots = 5;
+  const slideWidth = 300;
 
   useEffect(() => {
     if (carouselRef.current) {
@@ -43,26 +37,27 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
       const { scrollLeft, scrollWidth, clientWidth } = carouselRef.current;
       setCanScrollLeft(scrollLeft > 0);
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth);
+
+      const newIndex = Math.round(scrollLeft / (slideWidth + 8));
+      setCurrentIndex(newIndex);
     }
   };
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+      carouselRef.current.scrollBy({ left: -slideWidth, behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+      carouselRef.current.scrollBy({ left: slideWidth, behavior: "smooth" });
     }
   };
 
   const handleCardClose = (index) => {
     if (carouselRef.current) {
-      const cardWidth = isMobile() ? 230 : 384; 
-      const gap = isMobile() ? 4 : 8;
-      const scrollPosition = (cardWidth + gap) * (index + 1);
+      const scrollPosition = (slideWidth + 8) * index;
       carouselRef.current.scrollTo({
         left: scrollPosition,
         behavior: "smooth",
@@ -71,11 +66,9 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
     }
   };
 
-  // Scroll to a specific range of slides when a progress dot is clicked
   const scrollToSlide = (dotIndex) => {
-
-    const targetIndex = dotIndex; // The starting slide for the clicked dot (dot 0 = slides 1–4, etc.)
-    const scrollDistance = (targetIndex - currentIndex) * slideWidth; 
+    const targetIndex = dotIndex;
+    const scrollDistance = (targetIndex - currentIndex) * (slideWidth + 8);
 
     if (carouselRef.current) {
       carouselRef.current.scrollBy({
@@ -84,74 +77,101 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
       });
       setCurrentIndex(targetIndex);
 
-      // Manage left and right arrow states based on the new index
       setCanScrollLeft(targetIndex > 0);
       setCanScrollRight(targetIndex + visibleSlides < totalSlides);
     }
   };
 
-  const isMobile = () => {
-    return window && window.innerWidth < 768;
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - carouselRef.current.offsetLeft);
+    setScrollLeftStart(carouselRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    carouselRef.current.scrollLeft = scrollLeftStart - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    snapToNearestSlide();
+  };
+
+  const snapToNearestSlide = () => {
+    const { scrollLeft } = carouselRef.current;
+    const newIndex = Math.round(scrollLeft / (slideWidth + 8));
+    const scrollPosition = newIndex * (slideWidth + 8);
+    carouselRef.current.scrollTo({
+      left: scrollPosition,
+      behavior: "smooth",
+    });
+    setCurrentIndex(newIndex);
+  };
+
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX - carouselRef.current.offsetLeft);
+    setScrollLeftStart(carouselRef.current.scrollLeft);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.touches[0].pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    carouselRef.current.scrollLeft = scrollLeftStart - walk;
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    snapToNearestSlide();
   };
 
   return (
-    <CarouselContext.Provider
-      value={{ onCardClose: handleCardClose, currentIndex }}
-    >
-    <div className="w-full flex justify-center">
-      <div className="inline-flex justify-center gap-1 mr-10 border border-[#1C1C1F] rounded-lg p-1">
-        <button 
-          className="p-2 bg-[#141415] rounded-lg hover:bg-[#313136] transition-colors focus:outline-none  focus:bg-[#313136]"
-          aria-label="Previous"
-          onClick={scrollLeft}
-          disabled={!canScrollLeft}
-        >
-          <ChevronLeft className="w-4 h-4 text-white" />
-        </button>
-        <button 
-          className="p-2 bg-[#141415] rounded-lg hover:bg-[#313136] transition-colors focus:outline-none focus:bg-[#313136]"
-          aria-label="Next"
-          onClick={scrollRight}
-          disabled={!canScrollRight}
-        >
-          <ChevronRight className="w-4 h-4 text-white" />
-        </button>
+    <CarouselContext.Provider value={{ onCardClose: handleCardClose, currentIndex }}>
+      <div className="w-full flex justify-center">
+        <div className="inline-flex justify-center gap-1 mr-10 border border-[#1C1C1F] rounded-lg p-1">
+          <button 
+            className="p-2 bg-[#141415] rounded-lg hover:bg-[#313136] transition-colors focus:outline-none  focus:bg-[#313136]"
+            aria-label="Previous"
+            onClick={scrollLeft}
+            disabled={!canScrollLeft}
+          >
+            <ChevronLeft className="w-4 h-4 text-white" />
+          </button>
+          <button 
+            className="p-2 bg-[#141415] rounded-lg hover:bg-[#313136] transition-colors focus:outline-none focus:bg-[#313136]"
+            aria-label="Next"
+            onClick={scrollRight}
+            disabled={!canScrollRight}
+          >
+            <ChevronRight className="w-4 h-4 text-white" />
+          </button>
+        </div>
       </div>
-    </div>
 
-    <div className=" w-full">
+      <div className="w-full">
         <div
-          className="container px-4 mx-auto py-12 block md:flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth [scrollbar-width:none]"
+          className="container px-4 mx-auto py-12 block md:flex w-full overflow-x-scroll overscroll-x-auto [scrollbar-width:none] relative"
           ref={carouselRef}
           onScroll={checkScrollability}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={() => isDragging && setIsDragging(false)}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
-          <div
-            className={cn(
-              "absolute right-0  z-[1000] h-auto w-[5%] overflow-hidden bg-gradient-to-l"
-            )}
-          ></div>
-          <div
-            className={cn(
-              "flex flex-row justify-start gap-4",
-              "max-w-7xl mx-auto"
-            )}
-          >
+          <div className={cn("flex flex-row justify-start gap-4", "max-w-7xl mx-auto")}>
             {items.map((item, index) => (
               <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  transition: {
-                    duration: 0.5,
-                    delay: 0.2 * index,
-                    ease: "easeOut",
-                    once: true,
-                  },
-                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.2 * index, ease: "easeOut", once: true }}}
                 key={"card" + index}
                 className="rounded-3xl"
               >
@@ -165,7 +185,7 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
           {[...Array(progressDots)].map((_, dotIndex) => (
             <div
               key={dotIndex}
-              onClick={() => scrollToSlide(dotIndex)} // OnClick navigates to the corresponding slide range
+              onClick={() => scrollToSlide(dotIndex)}
               className={`h-[0.1rem] w-8 mx-1 rounded cursor-pointer transition-colors duration-300 ${
                 currentIndex === dotIndex ? "bg-white" : "bg-gray-500"
               }`}
@@ -176,6 +196,7 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
     </CarouselContext.Provider>
   );
 };
+
 
 export const Card = ({ card, index, layout = false }) => {
   const [open, setOpen] = useState(false);
@@ -254,7 +275,7 @@ export const Card = ({ card, index, layout = false }) => {
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
 
-        className="rounded-3xl bg-black dark:bg-neutral-900 w-96 h-[32rem] md:w-72 overflow-hidden flex flex-col items-start justify-start relative z-10 border border-[#1E1F24]"
+        className="cursor-default rounded-3xl bg-black dark:bg-neutral-900 w-96 h-[32rem] md:w-72 overflow-hidden flex flex-col items-start justify-start relative z-10 border border-[#1E1F24]"
       >
         <div className="absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
 
