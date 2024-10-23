@@ -1,27 +1,22 @@
 'use client'
 import Image from "next/image";
+import SectionHeader from "../SectionHeader";
 
 export default function Benefits() {
   return (
     <div className="container mx-auto">
       <div className="flex flex-col items-center gap-[2.4rem]">
-        <div className="flex flex-col items-center gap-[2.4rem] max-w-[580px]">
-          <div className="bg-[#cdfe6c] font-sora text-black text-xs rounded-lg px-3 py-2 font-medium leading-tight inline-block w-fit">
-            Benefits
-          </div>
-          <h1 className="font-sora text-4xl text-center tracking-tight mt-0 mb-0 font-normal leading-snug bg-gradient-to-r from-white to-[#A8ABD3] bg-clip-text text-transparent">
-            Not Your Typical DeFi Platform
-          </h1>
-          <p className="color-[#cfced1] text-base text-center tracking-tight mb-0 font-normal leading-relaxed">
-            From the founders of{" "}
+      <SectionHeader
+         primaryButtonText="Benefits"
+         title="Not Your Typical DeFi Platform"
+         description={`            From the founders of 
             <a href="https://bcube-landing.webflow.io/" aria-current="page" className="underline">
               b-cube.ai
             </a>
             , a fully regulated VASP (Virtual Asset Service Provider), we are
             proud to present B3X – a one-stop solution for investors, traders,
-            and beginners alike.
-          </p>
-        </div>
+            and beginners alike.`}
+         />
         <div className="grid grid-cols-3 gap-4">
             <div className="col-span-1 row-span-2 flex justify-center items-center flex-col bg-[#16171c] p-[2.4rem] rounded-xl border border-[#ffffff08]">
             <div data-w-id="a33b0875-c492-72aa-5615-b8713f0a6389" data-animation-type="lottie" data-src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9e9_Illustration_Build%2C-Test-and-Launch-a-Crypto-Fund.json" data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg" data-default-duration="6.75" data-duration="0">
@@ -45,7 +40,7 @@ export default function Benefits() {
             <div className="px-[7rem] py-[8rem] col-start-2 col-end-3 row-start-2 row-end-3 flex flex-col rounded-2xl border-[#ffffff08] bg-[#16171c]">
                 <Image src="https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9eb_logo.svg" width={150} height={150} className="relative"/>
             </div>
-            <div className="flex flex-col p-[2.4rem] col-start-2 col-end-2 row-start-1 row-end-1 bg-no-repeat bg-cover bg-[bottom_right] bg-[#16171c] bg-[url('https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9fe_benefits-bottom-left-card-bg.svg')] rounded-xl border border-[#ffffff08]">
+            <div className="flex flex-col p-[2.4rem] col-span-2 row-span-1 bg-no-repeat bg-cover bg-[bottom_right] bg-[#16171c] bg-[url('https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9fe_benefits-bottom-left-card-bg.svg')] rounded-xl border border-[#ffffff08]">
             <div className="leading-[0]">
                     <Image src={'svg/LandingPage/BenefitsAiTechnology.svg'} width={25} height={25}/>
                 </div>

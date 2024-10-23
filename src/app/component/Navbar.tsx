@@ -6,7 +6,11 @@ import Image from 'next/image'
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
    const [isChecked, setIsChecked] = useState(false);
+   const [loaded, setLoaded] = useState(false);
 
+   useEffect(() => {
+     setLoaded(true);
+   }, []);
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY
@@ -27,7 +31,7 @@ function Navbar() {
     <header
       className={`left-0 right-0 bg-transparent fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled ? "bg-background/70 backdrop-blur-md" : "bg-transparent"
-      }`}
+      } ${loaded ? "opacity-100" : "opacity-0"}`}
     >
       <div className=" container mx-auto">
         <div className="flex justify-between py-6">
