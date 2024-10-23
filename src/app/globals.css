@@ -72,6 +72,16 @@ html,body {
   .line-is-right{
     inset: 0% 0% 0% auto;
   }
+
+  .tokenomics_bottom-gradient{
+    z-index: -1;
+    background-image: linear-gradient(0deg, var(--color--dark), #fff0);
+    -webkit-user-select: none;
+    user-select: none;
+    height: 200px;
+    position: absolute;
+    inset: auto 0% 0%;
+  }
 }
 
 @layer utilities {

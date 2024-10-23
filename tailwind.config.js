@@ -8,12 +8,19 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-	container:{
-
-	},
+	   container: {
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
   	extend: {
 		screens: {
-			'max-md': { 'max': '1024px' }
+			'max-lg': { 'max': '1024px' },
+			'max-md': { 'max': '768px' }
 		},
 		 boxShadow: {
 			'inset-bottom': 'inset 0 -3px #222225', // Custom shadow

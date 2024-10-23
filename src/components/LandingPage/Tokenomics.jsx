@@ -4,6 +4,9 @@ import styles from './Landing.module.css'
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import AllocationTable from '../../app/component/AllocationTable';
+import { ALLOCATION_TABLE, SALES_TABLE } from '../../constants/tableData';
+import TokenomicsBGImage from '../../../public/images/token_bg_vector.webp'
+import Image from 'next/image';
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
@@ -59,8 +62,9 @@ const Tokenomics = () => {
 
     return (
 
-        <section id="tokenomics" className="section_tokenomics pt-[120px] relative ">
-            <div className={`${styles.w_container} w-layout-blockcontainer container tokenomics_container w-container xl:px-[180px] w-full block mx-auto max-w-[1440px]`}>
+        <section id="tokenomics" className="section_tokenomics relative">
+            <div className='container mx-auto'>
+            <div className={`${styles.w_container} w-layout-blockcontainer tokenomics_container w-container w-full block mx-auto`}>
                 <div className="tokenomics_wrapper">
                     <div className={styles.tokenomics_top}>
                         <div className={styles.label}>
@@ -70,9 +74,9 @@ const Tokenomics = () => {
                         <div className={styles.section_subtitle}>To achieve our goals, we’ve crafted a robust roadmap with clear milestones
                             strategically planned to guide us from initial development through public launch.</div>
                     </div>
-                    <div className={styles.tokenomics_main_wrapper}>
-                        <div className={`flex flex-col ${styles.tokenomics_main}`}>
-                            <div className="flex justify-around">
+                    <div className={`${styles.tokenomics_main_wrapper} `}>
+                        <div className={`flex flex-col px-8 py-12 ${styles.tokenomics_main}`}>
+                            <div className="gap-20 grid lg:grid-cols-2 items-center grid-cols-1">
                                 <div className="w-dyn-list">
                                     <div role="list" className={`${styles.tokenomics_fields} w-dyn-items`}>
                                         <div role="listitem" className="w-dyn-item">
@@ -131,7 +135,7 @@ const Tokenomics = () => {
                                     </div>
                                 </div>
 
-                                <div id="w-node-_75ad4af9-b073-017b-2437-820053e1e17a-70c9e965" className={styles.tokenomics_chart}>
+                                <div id="w-node-_75ad4af9-b073-017b-2437-820053e1e17a-70c9e965" className='relative z-50 flex items-center justify-center'>
                                     <div className="tokenomics_chart-image w-embed">
                                     </div>
                                     <div className="w-dyn-list">
@@ -149,7 +153,10 @@ const Tokenomics = () => {
                                     <div className={styles.tokenomics_number}>$ 5m</div>
                                 </div>
                             </div>
-                            <AllocationTable />
+                            <div className="grid mt-10 gap-20">
+                            <AllocationTable  data={SALES_TABLE} title="SALES STAGES AND RAISE ALLOCATION"/>
+                            <AllocationTable data={ALLOCATION_TABLE} title="TOKEN ALLOCATION & VESTING SCHEDULE"/>
+                            </div>
                         </div>
                         <div className="tokenomics_main-image-wrapper">
                             <img
@@ -171,16 +178,10 @@ const Tokenomics = () => {
                     </div>
                 </div>
             </div>
-            <img src="66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9bc_tokenomics-bg.webp" loading="lazy"
-                sizes="100vw"
-                srcset="66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9bc_tokenomics-bg.webp 500w, 66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9bc_tokenomics-bg.webp 800w, 66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9bc_tokenomics-bg.webp 1080w, 66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9bc_tokenomics-bg.webp 1600w, 66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9bc_tokenomics-bg.webp 2000w, 66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9bc_tokenomics-bg.webp 2881w"
-                alt="" className="tokenomics_bg" />
-            <img
-                src="66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9e3_tokenomics-bg-375.webp" loading="lazy" sizes="100vw"
-                srcset="66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9e3_tokenomics-bg-375.webp 500w, 66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9e3_tokenomics-bg-375.webp 751w"
-                alt="" className="tokenomics_bg is-mobile" />
-            <div className="tokenomics_bottom-gradient">
 
+            </div>
+            {/* <Image src={TokenomicsBGImage} alt=""/> */}
+            <div className="tokenomics_bottom-gradient">
             </div>
         </section>
     )

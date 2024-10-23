@@ -82,7 +82,7 @@ const HeroSection = () => {
       const visibleElements = useSequentialDisplay(animationSequences);
 
   return (
-    <section id="hero" className={styles.section_hero}>
+    <section id="hero" className={`container mx-auto ${styles.section_hero}`}>
       <div
         className={`${styles.w_layout_blockcontainer} ${styles.container} ${styles.w_container}`}
       >

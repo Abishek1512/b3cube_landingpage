@@ -26,9 +26,7 @@ function Home() {
         <Features />
         <Solutions/>
         <Benefits />
-        <ScaleAnimation>
-          <TokenInroduction />
-        </ScaleAnimation>
+        <TokenInroduction />
         <Tokenomics/>
         <section className="container mx-auto">
           <Faqs />

@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 36px;
-}
+ } 
 
  .w_container:before, .w_container:after {
     content: " ";
@@ -350,10 +350,10 @@
 
 
     @media screen and (max-width: 991px) {
-    .section_hero {
+    /* .section_hero {
         background-image: url('https://cdn.prod.website-files.com/66d9977…/66d9977…_hero-bg-gradient-768.svg');
         padding-top: 110px;
-    }
+    } */
         .container {
         justify-content: space-between;
         padding-left: 48px;

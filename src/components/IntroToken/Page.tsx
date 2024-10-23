@@ -24,7 +24,7 @@ function Page({}: Props) {
       <div className="min-h-screen text-white p-4 md:p-8">
         <div className="mx-auto relative">
           {/* Grid Layout */}
-          <div className="flex flex-col md:flex-row max-md:flex-wrap lg:flex-row lg:space-x-4">
+          <div className="flex flex-col md:flex-row max-lg:flex-wrap lg:flex-row lg:space-x-4">
             {/* Governance Card */}
             <div className="order-1 xl:order-2 lg:order-2 md:w-full lg:w-1/3 relative grid grid-rows-3 w-full">
               {/* Center Token Display - Full width on mobile, centered on larger screens */}
@@ -47,9 +47,9 @@ function Page({}: Props) {
                   tokens as rewards.
                 </p>
               </div>
-              <div className="max-md:hidden token-vertical-line line-is-left w-[1px]"></div>
-              <div className="max-md:hidden token-vertical-line line-is-right w-[1px]"></div>
-              <div className="hidden max-md:block token-horizontal-line h-[1px]"></div>
+              <div className="max-lg:hidden token-vertical-line line-is-left w-[1px]"></div>
+              <div className="max-lg:hidden token-vertical-line line-is-right w-[1px]"></div>
+              <div className="hidden max-lg:block token-horizontal-line h-[1px]"></div>
             </div>
 
             {/* Transaction Fees Card */}
@@ -66,7 +66,7 @@ function Page({}: Props) {
                   upgrades and parameter changes.
                 </p>
               </div>
-              <div className="max-md:hidden token-horizontal-line h-[1px]"></div>
+              <div className="max-lg:hidden token-horizontal-line h-[1px]"></div>
 
               {/* Staking Card */}
               <div className="row-span-6 text-center p-6 rounded-lg bg-opacity-10 ">
@@ -80,7 +80,7 @@ function Page({}: Props) {
                   on the DAO, and the protocol fee charged to the Fund managers.
                 </p>
               </div>
-              <div className="hidden max-md:block token-horizontal-line h-[1px]"></div>
+              <div className="hidden max-lg:block token-horizontal-line h-[1px]"></div>
             </div>
 
             {/* Liquidity Mining Card */}
@@ -95,7 +95,7 @@ function Page({}: Props) {
                   fees on the B3X platform.
                 </p>
               </div>
-              <div className="max-md:hidden token-horizontal-line h-[1px]"></div>
+              <div className="max-lg:hidden token-horizontal-line h-[1px]"></div>
 
               {/* Staking Card */}
               <div className="row-span-6 text-center p-6 rounded-lg bg-opacity-10 ">
@@ -110,11 +110,11 @@ function Page({}: Props) {
                   attract and retain users and liquidity on the platform.
                 </p>
               </div>
-              <div className="hidden max-md:block token-horizontal-line h-[1px]"></div>
+              <div className="hidden max-lg:block token-horizontal-line h-[1px]"></div>
             </div>
           </div>
         </div>
-        <div className="my-20 max-md:hidden token-horizontal-line h-[1px] w-1/3 mx-auto"></div>
+        <div className="my-20 max-lg:hidden token-horizontal-line h-[1px] w-1/3 mx-auto"></div>
         <div className="flex justify-between mt-8">
           <div className="flex flex-col items-center gap-8">
             <Image src={Commmunity} width={40} height={40} alt=""></Image>
