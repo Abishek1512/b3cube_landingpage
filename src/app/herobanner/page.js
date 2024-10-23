@@ -78,8 +78,8 @@ const HeroSection = () => {
         <section id="hero" className={` bg-[50%] bg-no-repeat bg-cover pt-[36px]`}>
             <div className={` ${styles.w_container} ${styles.container} w-full block px-[64px] md:px-[48px] md:max-w-[1440px] lg:max-w-[1440px] xl:max-w-[1440px] xl:ml-auto xl:mr-auto`}>
                 <div className={styles.hero_wrapper}>
-                    <div className={` gap-x-[60px] gap-y-[60px] grid-rows-[auto] auto-cols-[1fr] grid grid-cols-[560px_1fr] xl:grid-cols-[560px_1fr] md:gap-x-[48px] md:gap-y-[48px] md:grid-cols-[1fr] lg:gap-x-[60px] lg:gap-y-[60px] lg:grid-rows-[auto] lg:grid-cols-[394px_1fr] lg:auto-cols-[1fr] lg:grid`}>
-                        <div className={`self-center md:[grid-area:span_1_/_span_1_/_span_1_/_span_1] md:place-self-center md:[flex-flow:column] md:justify-start md:items-center md:max-w-[516px] md:flex  lg:self-center xl:self-center lg:block xl:block lg:place-self-center xl:place-self-center`}>
+                    <div className={` gap-x-[60px] gap-y-[60px] grid-rows-[auto] auto-cols-[1fr] xs:max-w-[540px] grid grid-cols-[560px_1fr] xl:grid-cols-[560px_1fr] max-md:gap-x-[48px] max-md:gap-y-[48px] max-md:grid-cols-[1fr] lg:gap-x-[60px] lg:gap-y-[60px] lg:grid-rows-[auto] lg:grid-cols-[394px_1fr] lg:auto-cols-[1fr] lg:grid sx`}>
+                        <div className={`self-center max-md:[grid-area:span_1_/_span_1_/_span_1_/_span_1] max-md:place-self-center max-md:[flex-flow:column] max-md:justify-start md:items-center md:max-w-[516px] md:flex  lg:self-center xl:self-center lg:block xl:block lg:place-self-center xl:place-self-center`}>
                             <div data-w-id="24148052-0508-b3d0-ee2b-ef28262d5109" className={'gap-x-[8px] gap-y-[8px] bg-[#1c1c1d] border-[1px] border-[solid] border-[#ffffff0d] rounded-[8px] justify-start items-center mb-[20px] pl-[6px] pr-[12px] py-[6px] inline-flex'}>
                                 <div className={'gap-x-[8px] rounded-[4px] justify-start items-center px-[5px] py-[3px] flex  gap-x-[2px] gap-y-[2px]  bg-[#d4ff2617]'}>
                                     <div className="traders_number-icon-wrapper">
