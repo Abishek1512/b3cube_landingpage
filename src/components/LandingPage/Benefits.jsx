@@ -4,8 +4,27 @@ import SectionHeader from "../SectionHeader";
 import Lottie from "lottie-react";
 import walletAnimation from './wallet_animation.json'
 import CalenderAnimation from './calender_animation.json'
+import { Mail } from "lucide-react";
+import { useState } from 'react'
 
 export default function Benefits() {
+
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+  function handleEmailSubmit(e) {
+    e.preventDefault();
+    if(email === ''){
+      // Handle error message show
+    } else {
+      setLoading(true)
+      setTimeout(() => {
+        setShowSuccessMessage(true);
+        setLoading(false);
+        setEmail('');
+      },[2000])
+    }
+  }
   return (
     <div className="container mx-auto">
       <div className="flex flex-col items-center gap-[2.4rem]">
@@ -90,6 +109,17 @@ export default function Benefits() {
               thousands defined by fund managers.
             </div>
           </div>
+        </div>
+        <div className="lg:bg-[url('https://cdn.prod.website-files.com/66d9977e72e7dfd970c9e964/66d9977e72e7dfd970c9e9b5_benefits-join-bg-grid.webp')] bg-[50%_100%] bg-no-repeat bg-cover justify-center items-start mt-[9.2rem] pb-9 w-full flex">
+                <div className="max-w-lg w-full">
+                  <h3 className="mb-12 text-base mt-0 text-white text-center">Enter the email, and join the waitlist for exciting benefits</h3>
+                  {showSuccessMessage ? <div className="p-[20px] text-center text-sm text-white">Thank you! Your submission has been received!</div> : <div className="bg-[#141418] border border-[#ffffff1f] rounded-[12px] justify-start items-center p-[0.4rem_0.4rem_0.4rem_1.2rem] flex">
+                    <Mail width={25} height={25} className="mr-3"/>
+                    <input required value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Enter email to join the waitlist" type="email" name="email" className="focus-visible:border:none focus-visible:outline-0 focus-visible:outline-transparent h-[40px] text-white text-base bg-transparent border-0 mb-0 px-0 w-full"/>
+                    <button className="border-none text-[0.65rem] p-3 text-nowrap cursor-pointer text-[#040405] bg-[#cdfe6c] rounded-lg font-semibold leading-[1.5] transition-all duration-200 shadow-[inset_0_-2px_#bbe95f]" onClick={(e) => {handleEmailSubmit(e)}}>{!loading ? `Join Beta Testing` : 'Please wait...'}</button>
+                  </div>}
+                  <div className="mt-8 text-center text-[#e6e6e699] text-[0.8rem]">By subscribing, I agree to the terms and conditions.</div>
+                </div>
         </div>
       </div>
     </div>
