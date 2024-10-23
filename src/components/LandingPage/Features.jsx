@@ -1,14 +1,14 @@
 "use client";
 import Image from "next/image";
-import BackTesting from "../../../public/svg/LandingPage/BackTestingTool.svg";
 import {useState} from "react";
 import styles from "./Landing.module.css";
 import FaqCard from "../../app/component/FaqCard";
 import SectionHeader from "../SectionHeader";
-export default function Features() {
+import withFadeInUpAnimation from "../../app/HOC/withFadeInUpAnimation";
+
+const SecondarySection = () => {
   const [activeSection, setActiveSection] = useState("FundBuilder");
   const [fade, setFade] = useState(true);
-  const [activeAccordions, setActiveAccordions] = useState([]);
   const handleSectionClick = (e, section) => {
     e.preventDefault();
     setFade(false);
@@ -17,26 +17,8 @@ export default function Features() {
       setActiveSection(section);
     }, [350]);
   };
-  const toggleAccordion = (index) => {
-    if (activeAccordions.includes(index)) {
-      // Remove from active if it was already open
-      setActiveAccordions(activeAccordions.filter((i) => i !== index));
-    } else {
-      // Otherwise, open it
-      setActiveAccordions([...activeAccordions, index]);
-    }
-  };
-  return (
+  return(
     <>
-      <div className="flex flex-col items-center gap-[2.4rem]">
-        <div className="flex flex-col items-center gap-[2.4rem] max-w-[644px]">
-         <SectionHeader
-         primaryButtonText="Features"
-         title="Everyone's Favorite App"
-         description="For the investor seeking ease of use, the Fund Manager seeking new horizons, and the trader craving advanced tools."
-         />
-        </div>
-        <div className="hidden md:block container">
           <div className="flex mb-16 ml-auto mr-auto flex-col">
             <div className="border border-white/10 rounded-xl justify-center items-center mb-12 ml-auto mr-auto p-1 inline-flex">
               <a
@@ -83,6 +65,35 @@ export default function Features() {
               {activeSection === "DEX" ? <Dex /> : null}
             </div>
           </div>
+    </>
+  )
+}
+
+const AnimatedSecondarySection = withFadeInUpAnimation(SecondarySection);
+
+export default function Features() {
+
+  const [activeAccordions, setActiveAccordions] = useState([]);
+
+  const toggleAccordion = (index) => {
+    if (activeAccordions.includes(index)) {
+      setActiveAccordions(activeAccordions.filter((i) => i !== index));
+    } else {
+      setActiveAccordions([...activeAccordions, index]);
+    }
+  };
+  return (
+    <>
+      <div className="flex flex-col items-center gap-[2.4rem]">
+        <div className="flex flex-col items-center gap-[2.4rem] max-w-[644px]">
+         <SectionHeader
+         primaryButtonText="Features"
+         title="Everyone's Favorite App"
+         description="For the investor seeking ease of use, the Fund Manager seeking new horizons, and the trader craving advanced tools."
+         />
+        </div>
+        <div className="hidden md:block container">
+        <AnimatedSecondarySection delay={500}/>
         </div>
         <div className="block md:hidden container">
         {accordionData.map((item, index) => (
