@@ -2,17 +2,17 @@ import { GlareCardDemo } from "../component/Glarecard";
 
 const TokenReferral = () => {
   return (
-
-    <div className="b3x-ttokens-referral container mx-auto px-8 py-12 my-16 flex flex-col md:flex-col lg:flex-row items-center justify-between bg-[#101115] md:gap-3 gap-7">
-      <div className="text-center md:text-left self-start mb-4 md:mb-0 w-full ">
-        <h4 className="text-2xl font-bold"> Get $10 worth of B3X Tokens!</h4>
-        <p className="my-9">
-          Earn $10 in B3X tokens by referring friends! B3X tokens offer
-          governance rights, lower trading fees, and access to exclusive
-          rewards, making them valuable for both traders and investors.
-        </p>
-
-        <div className="cursor-pointer hover:bg-[#e5e5e5] w-fit flex justify-start items-center gap-4 bg-white text-black text-sm text-center rounded-lg px-4 py-1 font-semibold transition-all duration-400 shadow-inner">
+    <div className="b3x-ttokens-referral container mx-auto px-8 py-12 my-16 flex flex-col md:flex-col lg:flex-row items-center justify-between bg-[#101115] md:gap-14 gap-7">
+      <div className="text-center md:text-left self-start mb-4 md:mb-0 w-full flex flex-col items-center sm:items-center md:items-center lg:items-start">
+        <div className="text-center md:text-start">
+          <h4 className="text-2xl font-bold"> Get $10 worth of B3X Tokens!</h4>
+          <p className="my-9">
+            Earn $10 in B3X tokens by referring friends! B3X tokens offer
+            governance rights, lower trading fees, and access to exclusive
+            rewards, making them valuable for both traders and investors.
+          </p>
+        </div>
+        <div className="cursor-pointer hover:bg-[#e5e5e5] w-fit flex justify-start items-center gap-4 bg-white text-black text-sm text-center rounded-lg px-2 py-1 font-semibold transition-all duration-400 shadow-inner">
           <div>Join the Beta Test</div>
           <div className="leading-[0] flex justify-center items-center bg-black rounded-lg w-[44px] h-[44px]">
             <svg
@@ -37,5 +37,4 @@ const TokenReferral = () => {
   );
 };
 
-
-export default TokenReferral
+export default TokenReferral;

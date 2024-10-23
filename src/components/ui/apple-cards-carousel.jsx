@@ -270,7 +270,7 @@ export const Card = ({ card, index, layout = false }) => {
               alt={card.title}
               width={270}
               height={245}
-              className="object-cover mx-14 md:rounded-xl"
+              className="object-cover mx-14 md:xrounded-xl"
             />
           </div>
           <motion.a className="absolute right-0 mx-4 my-2">
