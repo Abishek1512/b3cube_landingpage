@@ -12,8 +12,8 @@
 }
 
 .w_container{
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
  }
 
 .w_layout_blockcontainer{
@@ -211,7 +211,7 @@
 }
 
 .hero_main_right_style{
-    transform: scale3d(1, 1, 1) ;
+    transform: scale(1) ;
     /* transform-style: preserve-3d; */
     /* opacity: 1; */
 }
@@ -221,9 +221,9 @@
         display: inline-block;
 }
 .hero_right_bg{
-    z-index: -1;
+    /* z-index: -1;
     height: 100%;
-    position: absolute;
+    position: absolute; */
     inset: 0% 0% 0% auto;
 }
 
@@ -242,7 +242,7 @@
     grid-column-gap: 16px;
     grid-row-gap: 16px;
     background-color: var(--color--grey--900);
-    background-image: url(https://cdn.prod.website-files.com/66d9977…/66d9977…_hero-card-bg.svg);
+    background-image: url('/card_bg.svg');
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -254,7 +254,7 @@
     display: flex;
 }
 .is_unique {
-    background-image: linear-gradient(172deg, #0c0a1a 45%, #2056ca45), url(https://cdn.prod.website-files.com/66d9977…/66d9977…_hero-card-bg-unique1.svg);
+    background-image: linear-gradient(172deg, #0c0a1a 45%, #2056ca45), url('/bgunique.svg');
     background-position: 0 0, 50% 100%;
 }
 .hero_card_top {
@@ -310,9 +310,9 @@
         font-size: var(--font-size--laptop--body-m);
         font-family: var(--font--inter);
     }
-        .hero_right_bg {
+        /* .hero_right_bg {
         display: none;
-    }
+    } */
     .is_desk{
         display: block;
     }
@@ -375,16 +375,16 @@
         border-radius: 14px;
         min-height: 300px;
     }
-        .hero_main_right_style {
+        /* .hero_main_right_style {
         justify-self: auto;
-    }
+    } */
         .hero_image {
         max-height: 256px;
             display: inline-block;
     }
-        .hero_right_bg {
+        /* .hero_right_bg {
         display: none;
-    }
+    } */
     .is_tablet {
         height: auto;
         display: block;
