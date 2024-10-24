@@ -59,9 +59,6 @@
   align-self: stretch;
 }
 
-.solutions_card_bg {
-  background: linear-gradient(151.87deg, #16171c 13%, #07070b 53.68%);
-}
 
 .is_third {
   z-index: 3;

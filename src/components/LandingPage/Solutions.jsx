@@ -1,10 +1,51 @@
-import React from 'react'
+'use client';
+import React, { useRef, useEffect, useState } from 'react'
 import styles from './Landing.module.css'
+import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
 
 const Solutions = () => {
-    return (
+    const sectionRef = useRef(null);
+    const controls = useAnimation();
+    const [isInView, setIsInView] = useState(false);
 
-        <section id="solutions" className="section_solutions xl:pt-[120px] md:pt-[100px] sm:pt-[10px] pt-[50px]">
+    const { scrollYProgress: sectionScrollProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start center", "end center"],
+    });
+
+    const rotateValue = useTransform(sectionScrollProgress, [0, 1], [25, 0]);
+    const rotateValue1 = useTransform(sectionScrollProgress, [0, 1], [-25, 0]);
+
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+            },
+            { threshold: 0.2 }
+        );
+
+        if (sectionRef.current) {
+            observer.observe(sectionRef.current);
+        }
+
+        return () => {
+            if (sectionRef.current) {
+                observer.unobserve(sectionRef.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (isInView) {
+            controls.start({ opacity: 1 });
+        } else {
+            controls.start({ opacity: 0 });
+        }
+    }, [isInView, controls]);
+
+    return (
+        <section id="solutions" ref={sectionRef} className="section_solutions xl:pt-[120px] md:pt-[100px] sm:pt-[10px] pt-[50px]">
             <div className={`${styles.w_container} w-layout-blockcontainer container w_container block xl:px-[104px] w-full max-w-[1440px] mx-auto lg:px-[64px] md:px-[48px] sm:px-[16px] px-[16px]`}>
                 <div className="solutions_wrapper justify-start items-center flex flex-col">
                     <div className={`${styles.solutions_top} gap-x-[24px] gap-y-[24px] [flex-flow:column] justify-start items-center mb-[48px] flex`}>
@@ -14,8 +55,11 @@ const Solutions = () => {
                         <h2 className={`${styles.heading_bg} heading-style-h2 xl:text-[40px] text-[32px] font-[var(--font--sora)] text-[var(--font-size--laptop--h2)] text-center tracking-[-.3px] mt-0 mb-0 leading-[140%]`}>Your Defi Gateway</h2>
                     </div>
                     <div data-w-id="a18d496c-e967-bea8-ca36-825255d2d838" className={`${styles.solutions_cards} gap-x-[16px] gap-y-[16px] grid-rows-[auto] grid-cols-[1fr_1fr_1fr] auto-cols-[1fr] items-center grid`}>
-                        <div id="w-node-_78fde4c5-67ff-7d23-fd63-8532f4494bbb-70c9e965"
-                            data-w-id="78fde4c5-67ff-7d23-fd63-8532f4494bbb" className={`${styles.solution_cards} ${styles.is_third} ${styles.card} ${styles.solutions_card_bg}`}>
+                        <motion.div id="w-node-_78fde4c5-67ff-7d23-fd63-8532f4494bbb-70c9e965" 
+                        initial={{ opacity: 0 }} 
+                            style={{ rotate: rotateValue }} 
+                            animate={controls}
+                            data-w-id="78fde4c5-67ff-7d23-fd63-8532f4494bbb" className={`${styles.solution_cards} ${styles.is_third} ${styles.card} `} >
                             <img
                                 src="/3rdimg.webp" loading="lazy" alt=""
                                 className={styles.solutions_card_icon} />
@@ -60,11 +104,11 @@ const Solutions = () => {
                                     <div>Manual Building Options</div>
                                 </li>
                             </ul>
-                        </div>
+                        </motion.div>
                         <div id="w-node-_2f007734-fa21-5f5b-14e1-59f4acbdbb34-70c9e965" className={`${styles.solution_cards} ${styles.card} ${styles.solutions_card_bg}  ${styles.is_white}`}>
                             <img
-                            src="/solutions2.webp" loading="lazy" alt=""
-                            className={styles.solutions_card_icon} />
+                                src="/solutions2.webp" loading="lazy" alt=""
+                                className={styles.solutions_card_icon} />
                             <h3 className={`${styles.solutions_card_title} ${styles.for_investors}`}>For Investors</h3><img
                                 src="/separater.webp"
                                 loading="lazy" alt="" className={styles.solutions_card_divider} />
@@ -143,7 +187,10 @@ const Solutions = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div id="w-node-a18d496c-e967-bea8-ca36-825255d2d839-70c9e965"
+                        <motion.div id="w-node-a18d496c-e967-bea8-ca36-825255d2d839-70c9e965"
+                            initial={{ opacity: 0 }}
+                            style={{ rotate: rotateValue1 }}
+                            animate={controls}
                             data-w-id="a18d496c-e967-bea8-ca36-825255d2d839" className={`${styles.solution_cards} ${styles.card} ${styles.solutions_card_bg}`}><img
                                 src="/solutions3.webp" loading="lazy" alt=""
                                 className={styles.solutions_card_icon} />
@@ -188,11 +235,12 @@ const Solutions = () => {
                                     <div>Decentralized trading at its finest</div>
                                 </li>
                             </ul>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>
         </section>
+
     )
 }
 
